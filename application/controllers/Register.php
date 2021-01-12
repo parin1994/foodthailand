@@ -13,13 +13,12 @@ class Register extends CI_Controller {
         $this->load->view('register');
     }
     public function create(){
-        $userid = $this->input->post('$userid');
-        $name = $this->input->post('$name');
-        $lastname = $this->input->post('$lastname');
-        $email = $this->input->post('$email');
-        $phone = $this->input->post('$phone');
-        $address = $this->input->post('$address');
-        $address = $this->input->post('$address');
+        $userid = $this->input->post('userid');
+        $name = $this->input->post('name');
+        $lastname = $this->input->post('lastname');
+        $email = $this->input->post('email');
+        $phone = $this->input->post('phone');
+        $address = $this->input->post('address');
 
         $savedata =array(
             'userid' => $userid,
@@ -30,6 +29,7 @@ class Register extends CI_Controller {
             'address' => $address,
             'date' => date("Y/m/d H:i:s")
         );
+   
         $result = $this->register_model->create($savedata);
     }
 }
