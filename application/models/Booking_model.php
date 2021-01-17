@@ -26,4 +26,18 @@ class booking_model extends CI_Model {
         $query = $this->db->get("food");
         return $query->result();
     }
+    public function read_booking(){
+        // $sql = "select * from booking INNER JOIN table2
+        // ON table1.column_name = table2.column_name;";
+        $query = $this->db->get("booking");
+        return $query->result();
+    }
+    public function order($id_booking){
+        $where = array(
+            'id_booking' => $id_booking
+        );
+        $this->db->select('*')->from('order')->where($where);
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
