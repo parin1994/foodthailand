@@ -21,4 +21,10 @@ class Register_model extends CI_Model {
         $this->db->insert('register', $data);
         return $this->db->insert_id();
     }
+    public function read_admin($email,$pass){
+        $sql = "select email, pass from admin where email = '$email' and pass = '$pass'";
+        $query = $this->db->query($sql);
+        return $query->result();
+
+    }
 }
