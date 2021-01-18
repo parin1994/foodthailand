@@ -247,6 +247,29 @@ class Bot extends CI_Controller
                                     )
                                 );
                                 break;
+
+                                case "หลังบ้าน":                  
+                                    $actionBuilder = array(
+                                        new UriTemplateActionBuilder(
+                                            'เข้าสู่ระบบ', // ข้อความแสดงในปุ่ม
+                                            'https://liff.line.me/1655534162-pdgzDdAx' // ข้อความแสดงในปุ่ม
+                                        )
+                                    );
+                                    $replyData = new TemplateMessageBuilder(
+                                        'Carousel',
+                                        new CarouselTemplateBuilder(
+                                            array(
+                                                new CarouselColumnTemplateBuilder(
+                                                    'เข้าสู่ระบบ',
+                                                    'Addmin',
+                                                    'https://i.pinimg.com/736x/00/12/cd/0012cdc873feaf62cf91594fb575ca90.jpg',
+                                                    $actionBuilder
+                                                )
+                                            )
+                                        )
+                                    );
+                                    break;
+
                             case "บริการ":
                                 $textReplyMessage = "บริการของศูนย์บริการทั้งหมดจะมี ล้างรถ ขัดสี ขัดเงา ดูดฝุ่น ครับ";
                                 $replyData = new TextMessageBuilder($textReplyMessage);
