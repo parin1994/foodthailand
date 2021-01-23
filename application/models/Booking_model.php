@@ -22,6 +22,14 @@ class booking_model extends CI_Model {
         $this->db->insert('booking', $data);
         return $this->db->insert_id();
     }
+    public function payment_booking($savedata){
+        $data = array(
+            'receipt' => $savedata ['receirt'],
+           
+        );
+        $this->db->insert('booking', $data);
+        return $this->db->insert_id();
+    }
     public function read_all(){
         $query = $this->db->get("food");
         return $query->result();
@@ -36,7 +44,7 @@ class booking_model extends CI_Model {
         return $query->result();
     }
     public function read_userid($userid){
-        $sql = "SELECT * FROM booking where userid = '$userid' and status_pay = '0';";
+        $sql = "SELECT * FROM booking where userid = '$userid' and status = '0';";
         $query = $this->db->query($sql);
         return $query->result();
     }

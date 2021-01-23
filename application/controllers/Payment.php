@@ -21,17 +21,15 @@ class Payment extends CI_Controller
 public function payment()
     {
         $userid = $this->input->post('userid');
-        $receipt = $this->input->post('receipt');
-
-
+       
         $receipt = '';
         if (isset($_FILES['img']['name'])) {
-            $config['upload_path'] = './assets/content';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = '200';
-            $this->load->library('upload', $config);
-            $this->upload->do_upload('img');
-            $source = './assets/content/' . $_FILES['img']['name'];
+            // $config['upload_path'] = './assets/content';
+            // $config['allowed_types'] = 'gif|jpg|png';
+            // $config['max_size'] = '200';
+            // $this->load->library('upload', $config);
+            // $this->upload->do_upload('img');
+            // $source = './assets/content/' . $_FILES['img']['name'];
 
             $this->load->library('ftp');
             $ftp_config['hostname'] = '157.230.44.107';
@@ -41,22 +39,22 @@ public function payment()
 
             //Connect to the remote server
             $this->ftp->connect($ftp_config);
-            $this->ftp->upload($_FILES['img']['tmp_name'],"/public_html/assets/receipt/".$_FILES['img']['name'],"ascii", 0775);
+            $this->ftp->upload($_FILES['img']['tmp_name'],"/public_html/assets/food/".$_FILES['img']['name'],"ascii", 0775);
 
             //Close FTP connection
             $this->ftp->close();
-            $receipt = './assets/receipt/' . $_FILES['img']['name'];
+            $receipt = './assets/food/' . $_FILES['img']['name'];
         }
             $savedata = array(
                    
                     'img' => $receipt,
                 );
-                $result = $this->booking_model->create_booking($savedata);
+                $result = $this->booking_model->payment_booking($savedata);
 
                 //$this->load->view('booking');
                 echo "<script>
                 alert('บันทึกข้อมูลสำเร็จ');
-                window.location.href='https://boteye.appmoro.com/promotion';
+                window.location.href='http://foodthailand.herokuapp.com/payment';
                 </script>";
     }
 }
