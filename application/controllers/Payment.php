@@ -7,6 +7,8 @@ class Payment extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->library('upload');
+        $this->load->library('session');
+        $this->load->library('form_validation');
         $this->load->model('booking_model');
       
     }
