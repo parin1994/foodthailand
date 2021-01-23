@@ -81,7 +81,7 @@
     <div class="container-contact100" style="background-color:white;">
         <div class="card col-12 col-md-6 offset-md-2">
 
-            <form action="<?php echo base_url('payment/payment') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
+            <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
         
                 <div class="container">
                 <span class="col-12 text-center">

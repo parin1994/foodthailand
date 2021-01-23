@@ -20,7 +20,7 @@ class Payment extends CI_Controller
         $result = $this->booking_model->read_userid($userid);
         $this->load->view('payment',$result);
     }
-public function payment()
+public function payment_booking()
     {
         $userid = $this->input->post('userid');
        
