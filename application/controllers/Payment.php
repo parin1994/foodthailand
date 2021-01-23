@@ -54,7 +54,7 @@ public function payment()
                 //$this->load->view('booking');
                 echo "<script>
                 alert('บันทึกข้อมูลสำเร็จ');
-                window.location.href='http://foodthailand.herokuapp.com/payment';
+                window.location.href='https://foodthailand.herokuapp.com/payment';
                 </script>";
     }
 }
