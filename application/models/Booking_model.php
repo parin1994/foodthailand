@@ -44,7 +44,7 @@ class booking_model extends CI_Model {
         return $query->result();
     }
     public function read_userid($userid){
-        $sql = "SELECT * FROM booking where userid = '$userid' and status = '0';";
+        $sql = "SELECT * FROM booking where userid = '$userid' and status = 'รอ';";
         $query = $this->db->query($sql);
         return $query->result();
     }
