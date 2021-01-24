@@ -142,7 +142,7 @@
                                         <tr>
                                             <td style="width:5%;text-align:center"><?php echo $value->id_booking ?></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->id_table ?></td>
-                                            <td style="width:10%;text-align:center"><button onclick="openForm(<?php echo $value->id_booking ?>)">ดูรายรารอาหาร</button></td>
+                                            <td style="width:10%;text-align:center"><button onclick="openForm(<?php echo $value->id_booking ?>)">ดูรายการอาหาร</button></td>
                                             <td style="width:10%;text-align:right"><?php echo $value->total ?>&nbsp;บาท</td>
                                             <td style="width:10%;text-align:center"><?php echo $value->date ?></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->receipt ?></td>

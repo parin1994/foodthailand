@@ -48,4 +48,10 @@ class booking_model extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result();
     }
+    public function message_curl($id_booking) {
+        $this->db->set('status_food', 'สำเร็จ');
+        $this->db->where('id_booking', $id_booking);
+        $this->db->update('booking');
+        return $this->db->affected_rows();
+    }
 }
