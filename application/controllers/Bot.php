@@ -219,16 +219,16 @@ class Bot extends CI_Controller
 
                 switch ($typeMessage) {
                                 case "สถานะอาหาร":
-                                    $response = $bot->getProfile($userId);
-                                    if ($response->isSucceeded()) {
-                                        $userData = $response->getJSONDecodedBody(); // return array     
-                                        $userId = $userData['userId'];
-                                    }
-                                    $result1 = $this->booking_model->read_userid($userId);
-                                    foreach ($result as $value) {
-                                        $textReplyMessage = "เลข".$value->id_booking;
-                                    }                                    
-                                    $replyData = new TextMessageBuilder($textReplyMessage);
+                                    // $response = $bot->getProfile($userId);
+                                    // if ($response->isSucceeded()) {
+                                    //     $userData = $response->getJSONDecodedBody(); // return array     
+                                    //     $userId = $userData['userId'];
+                                    // }
+                                    // $result1 = $this->booking_model->read_userid($userId);
+                                    // foreach ($result as $value) {
+                                    //     $textReplyMessage = "เลข".$value->id_booking;
+                                    // }                                    
+                                    // $replyData = new TextMessageBuilder($textReplyMessage);
                                     break;
 
                                 case "หลังบ้าน":                  
