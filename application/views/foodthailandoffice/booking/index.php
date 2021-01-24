@@ -230,8 +230,12 @@
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
-            var Table = $('#tr').val();
-            Table.innerHTML = "";
+            var tableHeaderRowCount = 1;
+            var table = document.getElementById('myForm');
+            var rowCount = table.rows.length;
+            for (var i = tableHeaderRowCount; i < rowCount; i++) {
+                table.deleteRow(tableHeaderRowCount);
+            }
         }
         $(document).ready(function() {
             $("#date-popover").popover({
