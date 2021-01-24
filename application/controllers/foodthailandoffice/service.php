@@ -23,8 +23,8 @@ class Service extends CI_Controller
         $email = $this->session->userdata('email');
         $data['title'] = 'การให้บริการ';
         $data['read'] = $this->booking_model->read_booking($email);
-        $data['headers'] = $this->load->view('foodthailandoffice/include/headers', '', TRUE);
         $data['menu'] = $this->load->view('foodthailandoffice/include/menu', $data, TRUE);
+        $data['headers'] = $this->load->view('foodthailandoffice/include/headers', '', TRUE);
         $this->load->view('foodthailandoffice/service/services', $data);
     }
     public function create()
