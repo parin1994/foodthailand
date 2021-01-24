@@ -35,10 +35,12 @@ class Payment extends CI_Controller
             $ftp_config['hostname'] = '157.230.44.107';
             $ftp_config['username'] = 'appmoro_boteye';
             $ftp_config['password'] = 'qz8tXoa8r9';
+            $config['port']     = 21;
+            $config['passive']  = FALSE;
             $ftp_config['debug']    = TRUE;
 
             //Connect to the remote server
-            $this->ftp->connect('test');
+            $this->ftp->connect($ftp_config);
             $this->ftp->upload($_FILES['img']['tmp_name'], "/public_html/assets/food/" . $_FILES['img']['name'], "ascii", 0775);
 
             //Close FTP connection
