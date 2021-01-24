@@ -226,8 +226,7 @@ class Bot extends CI_Controller
                                     }
                                     $result1 = $this->booking_model->read_userid($userId);
                                     foreach ($result as $value) {
-                                        $textReplyMessage = "เลข $value->ig_booking";
-                                        $value->ig_booking;
+                                        $textReplyMessage = "เลข".$value->id_booking;
                                     }                                    
                                     $replyData = new TextMessageBuilder($textReplyMessage);
                                     break;
