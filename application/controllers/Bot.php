@@ -83,6 +83,7 @@ class Bot extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->model('booking_model');
     }
 
     public function ToObject($Array)
@@ -217,7 +218,23 @@ class Bot extends CI_Controller
                 }
 
                 switch ($typeMessage) {
-                                
+                    case 'text':
+                        $userMessage = strtolower($userMessage);
+                        switch ($userMessage) {
+                            
+                                case "สถานะอาหาร":
+                                    $response = $bot->getProfile($userId);
+                                    if ($response->isSucceeded()) {
+                                        $userData = $response->getJSONDecodedBody(); // return array     
+                                        $userId = $userData['userId'];
+                                    }
+                                    $result = $this->booking_model->read_userid($userId);
+                                    foreach ($result as $value) {
+                                        $textReplyMessage = "เลข".$value->id_booking;
+                                    }                                    
+                                    $replyData = new TextMessageBuilder($textReplyMessage);
+                                    break;
+
                                 case "หลังบ้าน":                  
                                     $actionBuilder = array(
                                         new UriTemplateActionBuilder(
