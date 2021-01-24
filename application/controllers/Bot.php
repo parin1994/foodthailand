@@ -234,6 +234,27 @@ class Bot extends CI_Controller
                                     }                                    
                                     $replyData = new TextMessageBuilder($textReplyMessage);
                                     break;
+                                    case "สั่งอาหาร":                  
+                                        $actionBuilder = array(
+                                            new UriTemplateActionBuilder(
+                                                'สั่งอาหาร', // ข้อความแสดงในปุ่ม
+                                                'https://liff.line.me/1655534162-R2o5O61a' // ข้อความแสดงในปุ่ม
+                                            )
+                                        );
+                                        $replyData = new TemplateMessageBuilder(
+                                            'Carousel',
+                                            new CarouselTemplateBuilder(
+                                                array(
+                                                    new CarouselColumnTemplateBuilder(
+                                                        'สั่งอาหาร',
+                                                        'เมนูอาหาร',
+                                                        'https://i.pinimg.com/736x/00/12/cd/0012cdc873feaf62cf91594fb575ca90.jpg',
+                                                        $actionBuilder
+                                                    )
+                                                )
+                                            )
+                                        );
+                                        break;
 
                                 case "หลังบ้าน":                  
                                     $actionBuilder = array(
