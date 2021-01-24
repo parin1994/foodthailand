@@ -58,7 +58,7 @@
                         <!--CUSTOM CHART START -->
                         <div class="border-head">
                             <h3><?php echo $title ?> <br></h3>
-                            <p><a href="<?php echo base_url('carcareoffice/service/create') ?>" class="btn btn-default pull-right">
+                            <p><a href="<?php echo base_url('foodthailandoffice/service/create') ?>" class="btn btn-default pull-right">
                                     <span class="fa fa-plus"> เพิ่ม</span>
                                 </a></p>
                         </div>
@@ -68,9 +68,9 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width:10%;text-align:center">ประเภทบริการ</th>
+                                        <th style="width:10%;text-align:center">รูป</th>
+                                        <th style="width:10%;text-align:center">เมนูอาหาร</th>
                                         <th style="width:10%;text-align:center">ราคา</th>
-                                        <th style="width:10%;text-align:center">วันที่</th>
                                         <th style="width:10%;text-align:center">แก้ไข</th>
                                         <th style="width:10%;text-align:center">ลบ</th>
                                     </tr>
@@ -82,10 +82,9 @@
                                     <tbody>
                                         <tr>
 
-                                            <td style="width:10%;text-align:center"><?php echo $value->option ?></td>
+                                        <td style="width:30%;text-align:center"><img src="<?php echo base_url($value->img) ?>" class="thumbnail"style="height: 100px; width: 100px;"></td>
+                                            <td style="width:10%;text-align:center"><?php echo $value->name_food ?></td>
                                             <td style="width:10%;text-align:right"><?php echo $value->price ?>&nbsp;บาท</td>
-                                            <td style="width:10%;text-align:center"><?php echo date_format( new DateTime($value->date_service), 'd/m/Y' ) ?></td>
-
 
                                             <td style="width:10%;text-align:center"><a href="<?php echo base_url('carcareoffice/service/update/' . $value->id_service) ?>" id="edit" class="btn btn-primary"><span class="fa fa-edit"></span></a></td>
                                             <td style="width:10%;text-align:center"><button type="button" class="btn btn-danger" data-href="<?php echo $value->id_service ?>" id="delete" data-toggle="modal" data-target="#confirm-delete"><span class="fa fa-trash"></span></button>
