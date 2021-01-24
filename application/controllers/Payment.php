@@ -26,12 +26,12 @@ class Payment extends CI_Controller
 
         $receipt = '';
         if (isset($_FILES['img']['name'])) {
-            // $config['upload_path'] = './assets/content';
-            // $config['allowed_types'] = 'gif|jpg|png';
-            // $config['max_size'] = '200';
-            // $this->load->library('upload', $config);
-            // $this->upload->do_upload('img');
-            // $source = './assets/content/' . $_FILES['img']['name'];
+            $config['upload_path'] = './assets/content';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = '200';
+            $this->load->library('upload', $config);
+            $this->upload->do_upload('img');
+            $source = './assets/content/' . $_FILES['img']['name'];
             $this->load->library('ftp');
             $ftp_config['hostname'] = '157.230.44.107';
             $ftp_config['username'] = 'appmoro_boteye';
