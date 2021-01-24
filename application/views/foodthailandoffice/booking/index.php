@@ -146,7 +146,7 @@
                                             <td style="width:10%;text-align:right"><?php echo $value->total ?>&nbsp;บาท</td>
                                             <td style="width:10%;text-align:center"><?php echo $value->date ?></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->receipt ?></td>
-                                            <td style="width:10%;text-align:center"><?php echo $value->status ?></td>
+                                            <td style="width:10%;text-align:center"><?php echo $value->status_food ?></td>
                                             <td style="width:10%;text-align:center"><a href="<?php echo base_url('curl/index/' . $value->id_booking.'/'. $value->userid) ?>" class="btn btn-success"><span class="fa fa-commenting-o"></span></a></td>
                                         </tr>
                                     </tbody>
