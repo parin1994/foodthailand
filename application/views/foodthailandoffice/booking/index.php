@@ -230,7 +230,7 @@
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
-            var Table = document.getElementById("tr");
+            var Table = $('#tr').val();
             Table.innerHTML = "";
         }
         $(document).ready(function() {
