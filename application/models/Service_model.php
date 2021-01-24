@@ -25,7 +25,11 @@ class Service_model extends CI_Model
         $this->db->insert('service', $data);
         return $this->db->insert_id();
     }
-
+    public function read_admin($email){
+        $sql = "select email from admin where email ";
+        $query = $this->db->get($sql);
+        return $query->result();
+    }
     public function read_service_by_id($email)
     {
         $where = array(
