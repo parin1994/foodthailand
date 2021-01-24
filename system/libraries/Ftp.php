@@ -151,7 +151,6 @@ class CI_FTP {
 		{
 			$this->initialize($config);
 		}
-		print_r($this->conn_id);
 		if (FALSE === ($this->conn_id = @ftp_connect($this->hostname, $this->port)))
 		{
 			if ($this->debug === TRUE)
