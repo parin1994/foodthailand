@@ -17,8 +17,7 @@
                             <span>การให้บริการ</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="<?php echo base_url('carcareoffice/service')?>">การบริการ</a></li>
-                            <li><a href="<?php echo base_url('carcareoffice/promotion')?>">โปรโมชัน</a></li>
+                            <li><a href="<?php echo base_url('foodthailandoffice/service')?>">การบริการ</a></li>
                         </ul>
                     </li>
                     <!-- <li class="sub-menu">
