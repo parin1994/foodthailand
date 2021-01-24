@@ -217,36 +217,16 @@ class Bot extends CI_Controller
                 }
 
                 switch ($typeMessage) {
-                    case 'text':
-                        $userMessage = strtolower($userMessage);
-                        switch ($userMessage) {
-
-                            case "ติดต่อเรา":
-                                // กำหนด action 4 ปุ่ม 4 ประเภท
-                                $actionBuilder = array(
-                                    //                                new UriTemplateActionBuilder(
-                                    //                                        'Facebook', // ข้อความแสดงในปุ่ม
-                                    //                                        'https://www.facebook.com/parin.zaa.39'
-                                    //                                ),
-                                    new UriTemplateActionBuilder(
-                                        'โทร', // ข้อความแสดงในปุ่ม
-                                        'tel://0951922340' // ข้อความแสดงในปุ่ม
-                                    )
-                                );
-                                $replyData = new TemplateMessageBuilder(
-                                    'Carousel',
-                                    new CarouselTemplateBuilder(
-                                        array(
-                                            new CarouselColumnTemplateBuilder(
-                                                'ติดต่อเรา',
-                                                'เมืองขลุงคาร์แคร์',
-                                                'https://image.freepik.com/free-photo/businesswoman-looking-important-contact-phone_1163-4256.jpg',
-                                                $actionBuilder
-                                            )
-                                        )
-                                    )
-                                );
-                                break;
+                                case "สถานะอาหาร":
+                                    $response = $bot->getProfile($userId);
+                                    if ($response->isSucceeded()) {
+                                        $userData = $response->getJSONDecodedBody(); // return array     
+                                        $userId = $userData['userId'];
+                                    }
+                                    $result1 = $this->booking_model->read_userid($userId);
+                                    $textReplyMessage = "$result1";
+                                    $replyData = new TextMessageBuilder($textReplyMessage);
+                                    break;
 
                                 case "หลังบ้าน":                  
                                     $actionBuilder = array(
