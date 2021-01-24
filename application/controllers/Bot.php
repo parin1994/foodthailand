@@ -225,6 +225,7 @@ class Bot extends CI_Controller
                                         $userId = $userData['userId'];
                                     }
                                     $result1 = $this->booking_model->read_userid($userId);
+                                    print_r($result1);
                                     $textReplyMessage = "$result1";
                                     $replyData = new TextMessageBuilder($textReplyMessage);
                                     break;
