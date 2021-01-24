@@ -147,7 +147,7 @@
                                             <td style="width:10%;text-align:center"><?php echo $value->date ?></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->receipt ?></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->status ?></td>
-                                            <td style="width:10%;text-align:center"><a href="<?php echo base_url('curl/index/' . $value->queue.'/'. $value->userid) ?>" class="<?php echo $color?>"><span class="fa fa-commenting-o"></span></a></td>
+                                            <td style="width:10%;text-align:center"><a href="<?php echo base_url('curl/index/' . $value->id_booking.'/'. $value->userid) ?>" ><span class="fa fa-commenting-o"></span></a></td>
                                         </tr>
                                     </tbody>
                                 <?php } ?>
