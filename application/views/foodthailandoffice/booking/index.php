@@ -230,8 +230,7 @@
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
-            var Table = $('#myForm').val();
-            Table.innerHTML = "";
+            $("myForm").children().remove()
         }
         $(document).ready(function() {
             $("#date-popover").popover({
