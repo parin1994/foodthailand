@@ -83,7 +83,6 @@ class Bot extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('booking_model');
     }
 
     public function ToObject($Array)
