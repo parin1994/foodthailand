@@ -220,7 +220,7 @@
                             '<td>' + data[i].name_food + '</td>' +
                             '<td>' + data[i].qty + '</td>' +
                             '<td>' + data[i].price + '</td>' +
-                            '<td>' + data[i].detial + '</td>' +
+                            '<td>' + data[i].detail + '</td>' +
                         '</tr>';
                     }
                     $('#tr').first().after(html);
