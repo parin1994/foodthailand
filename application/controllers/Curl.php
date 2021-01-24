@@ -10,7 +10,7 @@ class Curl extends CI_Controller {
     {
         $this->booking_model->message_curl($id_booking);
         $url = 'https://api.line.me/v2/bot/message/push';
-        $authorization = "F9U+52FYdBOSEhTIpvGHSseU8n8eRBcCWJt7QaR9ey3V1u5BQNzt1XJPtlq+GhQvekhWVbdsV0SGi6pzyXDX6pu2w+eBVKnPPjwAnMxF33nTIgMijXuRgtGJ5V7PnwPjLJVedqBztbt0X7vHl9NN7lGUYhWQfeY8sLGRXgo3xvw=";
+        $authorization = "GZEJLqSSM+/1fMGVUK7Bk4ngrmJyzyiPW4fQ7JNaauAaUI51RSzcYJNaRbsJxB1CBBOkkUfKKjdOF5GNn2KOayOCtcMPd+mqrThpGwGr8Su0XFao8kpkrjZxP4C4XdFY7Y1cL4vrHH+JLuZyv0APRAdB04t89/1O/w1cDnyilFU=";
         $post = '{
             "to": "'.$userid.'",
             "messages": [
