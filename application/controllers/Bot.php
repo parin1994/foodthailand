@@ -221,7 +221,7 @@ class Bot extends CI_Controller
                     case 'text':
                         $userMessage = strtolower($userMessage);
                         switch ($userMessage) {
-                            
+
                                 case "สถานะอาหาร":
                                     $response = $bot->getProfile($userId);
                                     if ($response->isSucceeded()) {
@@ -230,7 +230,7 @@ class Bot extends CI_Controller
                                     }
                                     $result = $this->booking_model->read_userid($userId);
                                     foreach ($result as $value) {
-                                        $textReplyMessage = "เลข".$value->id_booking;
+                                        $textReplyMessage = "เลข $value->id_booking";
                                     }                                    
                                     $replyData = new TextMessageBuilder($textReplyMessage);
                                     break;
