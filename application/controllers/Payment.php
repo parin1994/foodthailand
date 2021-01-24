@@ -10,6 +10,7 @@ class Payment extends CI_Controller
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('booking_model');
+        $this->load->library('ftp');
     }
     public function index()
     {
