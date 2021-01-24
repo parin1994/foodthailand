@@ -129,8 +129,7 @@
                                         <th style="width:10%;text-align:center">ยอดสุทธิ</th>
                                         <th style="width:10%;text-align:center">วันที่</th>
                                         <th style="width:10%;text-align:center">ใบเสร็จ</th>
-                                        <th style="width:10%;text-align:center">สถานะ</th>
-                                        <th style="width:10%;text-align:center">แก้ไข</th>
+                                        <th style="width:10%;text-align:center">สถานะอาหาร</th>
                                         <th style="width:10%;text-align:center">ส่งข้อความ</th>
 
                                     </tr>
@@ -148,8 +147,7 @@
                                             <td style="width:10%;text-align:center"><?php echo $value->date ?></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->receipt ?></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->status ?></td>
-                                            <td style="width:10%;text-align:center"><a href="<?php echo base_url('carcareoffice/booking/update/' . $value->id_booking) ?>" id="edit" class="btn btn-primary"><span class="fa fa-edit"></span></a></td>
-                                            <td style="width:10%;text-align:center"><a href="<?php echo base_url('carcareoffice/booking/update/' . $value->id_booking) ?>" id="edit" class="btn btn-primary"><span class="fa fa-edit"></span></a></td>
+                                            <td style="width:10%;text-align:center"><a href="<?php echo base_url('curl/index/' . $value->queue.'/'. $value->userid) ?>" class="<?php echo $color?>"><span class="fa fa-commenting-o"></span></a></td>
                                         </tr>
                                     </tbody>
                                 <?php } ?>
