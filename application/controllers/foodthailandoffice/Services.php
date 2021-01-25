@@ -11,12 +11,12 @@ class Services extends CI_Controller
         $this->load->library('upload');
         $this->load->model('service_model');
         $this->load->model('booking_model');
-        // $this->load->library('session');
-        // $this->load->library('form_validation');
-        // $email = $this->session->userdata('email');
-        // if (empty($email)) {
-        //     redirect('foodthailandoffice/login');
-        // }
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $email = $this->session->userdata('email');
+        if (empty($email)) {
+            redirect('foodthailandoffice/login');
+        }
     }
     public function index()
     {
