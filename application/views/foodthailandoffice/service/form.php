@@ -70,7 +70,7 @@
                                     <input type="hidden" id="email" name="email" value="">
 
 
-                                    <label for="name_blog">ประเภทการให้บริการ</label>
+                                    <label for="name_blog">ประเภทอาหร</label>
                                     <input type="text" class="form-control" name="name_food" id="name_food" placeholder="" value="<?php echo $con->name_food ?>">
 
                                     <label for="title_blog">ราคา</label>
