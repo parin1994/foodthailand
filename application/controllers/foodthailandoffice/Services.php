@@ -86,7 +86,7 @@ class Services extends CI_Controller
             );
 
             $result = $this->service_model->update_service($savedata);
-            redirect('foodthailandoffice/service/index');
+            redirect('foodthailandoffice/services/index');
 
             $data['con'] = $this->service_model->read_service_by_id1($id_food);
         }
