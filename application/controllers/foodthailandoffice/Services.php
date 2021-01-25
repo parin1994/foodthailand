@@ -59,7 +59,7 @@ class Services extends CI_Controller
             );
 
             $result = $this->service_model->create_service($savedata);
-            redirect('foodthailandoffice/service');
+            redirect('foodthailandoffice/services/index');
         }
         $this->load->view('foodthailandoffice/service/form', $data);
     }
