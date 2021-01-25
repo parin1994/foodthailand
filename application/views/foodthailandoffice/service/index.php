@@ -68,7 +68,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width:10%;text-align:center">รูป</th>
+                                        <!-- <th style="width:10%;text-align:center">รูป</th> -->
                                         <th style="width:10%;text-align:center">เมนูอาหาร</th>
                                         <th style="width:10%;text-align:center">ราคา</th>
                                         <th style="width:10%;text-align:center">แก้ไข</th>
@@ -82,7 +82,6 @@
                                     <tbody>
                                         <tr>
 
-                                        <td style="width:30%;text-align:center"><img src="<?php echo base_url($value->img) ?>" class="thumbnail"style="height: 100px; width: 100px;"></td>
                                             <td style="width:10%;text-align:center"><?php echo $value->name_food ?></td>
                                             <td style="width:10%;text-align:right"><?php echo $value->price ?>&nbsp;บาท</td>
 
