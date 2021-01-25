@@ -38,16 +38,7 @@ class Service_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-    public function read_service_by_id($email)
-    {
-        $where = array(
-            'email' => $email,
-            'delete' => 1
-        );
-        $this->db->select('id_service,option,price,date_service,email,delete')->from('service')->where($where);
-        $query = $this->db->get();
-        return $query->result();
-    }
+   
     public function read_service_by_id1($id_food)
     {
         $where = array(
@@ -58,12 +49,7 @@ class Service_model extends CI_Model
         return $query->row();
     }
 
-    public function read_service_all()
-    {
-        $this->db->select('id_service,option,price,date_service,email')->from('service');
-        $query = $this->db->get();
-        return $query->result();
-    }
+  
 
     public function update_service($savedata)
     {
@@ -86,10 +72,4 @@ class Service_model extends CI_Model
         return $this->db->affected_rows();
     }
 
-    //ลบออกจาก database
-    // public function delete_service($id_service) {
-    //     $this->db->where('id_service', $id_service);
-    //     $this->db->delete('service');
-    //     return $this->db->affected_rows();
-    // }
 }
