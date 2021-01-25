@@ -63,7 +63,7 @@
                             </div>
 
                             
-                            <form role="form" action="<?php echo base_url('foodthailandoffice/service/' . $method . '/' . $con->id_food) ?>" method="post"  enctype="multipart/form-data">
+                            <form role="form" action="<?php echo base_url('foodthailandoffice/services/' . $method . '/' . $con->id_food) ?>" method="post"  enctype="multipart/form-data">
                             
                             <div class="box-body">
                                 <div class="form-group">
@@ -78,8 +78,8 @@
 
                                 </div>
                                 <div class="box-footer">
-                                    <button href="<?php echo base_url('foodthailandoffice/service/services') ?>" class="btn btn-primary" type="submit" name="btnsave" id="btnSave ">Save</button>
-                                    <a href="<?php echo base_url('foodthailandoffice/service/index') ?>" class="btn btn-danger">Cancel</a>
+                                    <button href="<?php echo base_url('foodthailandoffice/services/index') ?>" class="btn btn-primary" type="submit" name="btnsave" id="btnSave ">Save</button>
+                                    <a href="<?php echo base_url('foodthailandoffice/services/index') ?>" class="btn btn-danger">Cancel</a>
                                     <input type="hidden" name="method" value="<?php echo $method ?>">
                                     <input type="hidden" name="id" value="">
                                 </div>
