@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <title>Carcare</title>
+    <title>Food</title>
     <link href="img/favicon.png" rel="icon">
     <link href="<?php echo base_url('assets/services/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">
     <link href="<?php echo base_url('assets/services/lib/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
