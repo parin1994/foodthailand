@@ -202,11 +202,9 @@
         $(function() {
 
             $('#confirm-delete').on('show.bs.modal', function(e) {
-                console.log('test');
                 $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
             });
             $('.clickDelete').on('click', function(e) {
-                console.log('test1');
                 e.preventDefault();
                 $.ajax({
                     type: "GET",
