@@ -14,20 +14,25 @@ class Service_model extends CI_Model
     public function create_service($savedata)
     {
         $data = array(
-            'option' => $savedata['option'],
+            'name_food' => $savedata['name_food'],
             'price' => $savedata['price'],
-            'date_service' => $savedata['date_service'],
-            'email' => $savedata['email'],
+            'img' => $savedata['img'],
             'delete' => $savedata ['delete']
 
         );
 
-        $this->db->insert('service', $data);
+        $this->db->insert('food', $data);
         return $this->db->insert_id();
     }
-    public function read_admin($email){
+    public function read_admin(){
         $sql = "select email from admin where email ";
         $query = $this->db->get($sql);
+        return $query->result();
+    }
+    public function read_service_all_admin()
+    {
+        $this->db->select('id_food,name_food,price,img')->from('food');
+        $query = $this->db->get();
         return $query->result();
     }
     public function read_service_by_id($email)
@@ -40,15 +45,13 @@ class Service_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-    public function read_service_by_id1($id_service)
+    public function read_service_by_id1($id_food)
     {
         $where = array(
-            'id_service' => $id_service,
+            'id_food' => $id_food,
         );
-        $this->db->select('id_service,option,price,date_service,email')->from('service')->where($where);
+        $this->db->select('id_food,name_food,price,')->from('food')->where($where);
         $query = $this->db->get();
-        // print_r($where);
-        // exit();
         return $query->row();
     }
 
@@ -63,20 +66,20 @@ class Service_model extends CI_Model
     {
 
         $data = array(
-            'id_service' => $savedata['id_service'],
-            'option' => $savedata['option'],
+            'id_food' => $savedata['id_food'],
+            'name_food' => $savedata['name_food'],
             'price' => $savedata['price'],
 
         );
-        $this->db->where('id_service', $savedata['id_service']);
-        $this->db->update('service', $data);
+        $this->db->where('id_food', $savedata['id_food']);
+        $this->db->update('food', $data);
     }
     
-    public function delete_service($id_service)
+    public function delete_service($id_food)
     {
         $this->db->set('delete', 0);
-        $this->db->where('id_service', $id_service);
-        $this->db->update('service');
+        $this->db->where('id_food', $id_food);
+        $this->db->update('food');
         return $this->db->affected_rows();
     }
 

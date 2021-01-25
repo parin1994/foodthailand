@@ -86,8 +86,8 @@
                                             <td style="width:10%;text-align:center"><?php echo $value->name_food ?></td>
                                             <td style="width:10%;text-align:right"><?php echo $value->price ?>&nbsp;บาท</td>
 
-                                            <td style="width:10%;text-align:center"><a href="<?php echo base_url('carcareoffice/service/update/' . $value->id_service) ?>" id="edit" class="btn btn-primary"><span class="fa fa-edit"></span></a></td>
-                                            <td style="width:10%;text-align:center"><button type="button" class="btn btn-danger" data-href="<?php echo $value->id_service ?>" id="delete" data-toggle="modal" data-target="#confirm-delete"><span class="fa fa-trash"></span></button>
+                                            <td style="width:10%;text-align:center"><a href="<?php echo base_url('foodthailandeoffice/service/update/' . $value->id_food) ?>" id="edit" class="btn btn-primary"><span class="fa fa-edit"></span></a></td>
+                                            <td style="width:10%;text-align:center"><button type="button" class="btn btn-danger" data-href="<?php echo $value->id_food ?>" id="delete" data-toggle="modal" data-target="#confirm-delete"><span class="fa fa-trash"></span></button>
 
                                             </td>
                                         </tr>
@@ -209,7 +209,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: "GET",
-                    url: "<?php echo base_url('carcareoffice/service/delete') ?>" + '/' + $(this).attr('href'),
+                    url: "<?php echo base_url('foodthailandoffice/service/delete') ?>" + '/' + $(this).attr('href'),
                     data: '',
                     dataType: "json",
                     success: function(obj) {
