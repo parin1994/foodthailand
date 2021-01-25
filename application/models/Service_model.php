@@ -31,7 +31,10 @@ class Service_model extends CI_Model
     }
     public function read_service_all_admin()
     {
-        $this->db->select('id_food,name_food,price,img')->from('food');
+        $where = array(
+            'delete' => 1,
+        );
+        $this->db->select('id_food,name_food,price,img')->from('food')->where($where);
         $query = $this->db->get();
         return $query->result();
     }
