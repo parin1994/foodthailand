@@ -54,7 +54,6 @@
             var name_food = $(this).data("name_food");
             var price = $(this).data("price");
             var quantity = $('#' + id_food).val();
-            console.log(quantity);
             if (quantity != '' && quantity > 0) {
                 $.ajax({
                     url: "<?php echo base_url(); ?>booking/add",
@@ -69,7 +68,9 @@
                         // alert("Product Added into Cart");
                         // $('#cart_details').html(data);
                         // $('#' + id_food).val('');
-                        alert(data.id_food);
+                        alert(data);
+                        var values = $.parseJSON(data);
+                        console.log(values.name);
                         var html;
                         html += '<tr>'+
                             '<td>' + data.id_food + '</td>' +
