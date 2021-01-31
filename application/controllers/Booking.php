@@ -38,10 +38,8 @@ class Booking extends CI_Controller
         );
         $this->session->set_userdata('cart', $data);
         $cart = $this->session->userdata('cart');
-        //echo json_encode($cart);
-        $resultObj1 = $this->ToObject($cart);
-        echo $resultObj1;
-        
+        $result = $this->ToObject($cart);
+        echo json_encode($result);
     }
     public function view()
     {
