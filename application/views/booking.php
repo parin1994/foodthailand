@@ -38,10 +38,11 @@
                 <tbody>
                     <tr id="tr"></tr>
                 </tbody>
+                <button type="button" name="save" id="save" class="btn btn-primary" hidden>Save</button>
         </div>
     </div>
     <div>
-        <button type="button" name="save" id="save" class="btn btn-primary" hidden>Save</button>
+        
     </div>
 </body>
 
