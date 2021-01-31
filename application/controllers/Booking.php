@@ -34,6 +34,6 @@ class Booking extends CI_Controller
         );
         $this->session->set_userdata('cart', $data);
         $cart = $this->session->userdata('cart');
-        print_r('Cart'.$cart);
+        print_r($cart);
     }
 }
