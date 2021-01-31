@@ -13,6 +13,7 @@
         <div class="col-lg-6 col-md-6">
             <div class="table-responsive">
                 <h3 align="center">เมนูอาหาร</h3><br />
+                <input type="text" id="userid" name="userid" value="">
                 <?php foreach ($product as $row) { ?>
                     <div class="col-md-4" style="padding:16px; background-color:#f1f1f1; border:1px solid #ccc; margin-bottom:16px; height:400px" align="center">
                         <img src="<?php echo base_url($row->img) ?>" class="img-thumbnail" style="height: 100px; width: 100px;"><br />
@@ -34,7 +35,7 @@
     </div>
 </body>
 
-</html>
+
 <script>
     $(document).ready(function() {
 
@@ -102,3 +103,17 @@
 
     });
 </script>
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="liff-starter.js"></script>
+    <script>
+        window.onload = function (e) {
+            liff.init(function (data) {
+                initializeApp(data);
+            });
+        };
+
+        function initializeApp(data) {
+            document.getElementById('userid').value = data.context.userId;
+        }
+    </script>
+    </html>
