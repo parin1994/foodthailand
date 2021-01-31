@@ -33,8 +33,8 @@
                     <th width="40%">Name</th>
                     <th width="15%">Quantity</th>
                     <th width="15%">Price</th>
-                    <th width="15%">Total</th>
-                    <th width="15%">Action</th>
+                    <!-- <th width="15%">Total</th>
+                    <th width="15%">Action</th> -->
                 </thead>
                 <tbody>
                     <tr id="tr"></tr>
@@ -73,13 +73,11 @@
                     for (i = 0; i < data.length; i++) {
                         html += '<tr>'+
                             '<td>' + data[i].name_food + '</td>' +
-                            '<td>' + data[i].qty + '</td>' +
-                            '<td>' + data[i].price + '</td>' +
-                            '<td>' + data[i].qty + '</td>' +
-                            '<td>' + data[i].price + '</td>' +
+                            '<td>' + data[i].quantity + '</td>' +
+                            '<td>' + data[i].price + '</td>' 
                         '</tr>';
                     }
-                    $('#tr').first().after(html);
+                    $('#tr').add(html);
                     }
                 });
             } else {
