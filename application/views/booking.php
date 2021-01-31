@@ -39,6 +39,7 @@
                     <tr id="tr"></tr>
                 </tbody>
         </div>
+        <button type="button" name="save" id="save" class="btn btn-primary" hidden>Save</button>
     </div>
 
     </div>
@@ -70,10 +71,11 @@
                             '<td>' + values.name_food + '</td>' +
                             '<td>' + values.quantity + '</td>' +
                             '<td>' + values.price + '</td>'+
-                            '<td><button type="button" name="remove" id="'+ values.name_food+'">Remove</button></td>'
+                            '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove_inventory" id="'+ values.id_food+'">Remove</button></td>'
                         '</tr>';
 
                     $('#tr').after(html);
+                    $('#save').show();
                     }
                 });
             } else {
