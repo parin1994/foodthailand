@@ -77,7 +77,7 @@
                             '<td>' + data[i].price + '</td>' 
                         '</tr>';
                     }
-                    $('#tr').append(html);
+                    $('#tr').after(html);
                     }
                 });
             } else {
