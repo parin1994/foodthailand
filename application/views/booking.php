@@ -26,7 +26,6 @@
         </div>
     </div>
     <div class="col-lg-6 col-md-6">
-        <input type="text" id="test" name="test"/>
         <div id="cart_details">
             <h3 align="center">ตะกร้าสินค้า</h3>
             <table class="table table-bordered">
@@ -77,10 +76,8 @@
                             '<td>' + data.quantity + '</td>' +
                             '<td>' + data.price + '</td>' 
                         '</tr>';
-                        var test
-                        test = '<input type="text" value='+data+'/>';
-                    $('#test').html(data);
-                    $('#tr').after(html);
+
+                    $('#tr').html(html);
                     }
                 });
             } else {
