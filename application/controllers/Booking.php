@@ -26,8 +26,6 @@ class Booking extends CI_Controller
     }
     public function add()
     {
-        $this->session->unset_userdata('cart','');
-        $this->session->sess_destroy();
         $id_food = $this->input->post('id_food');
         $name_food = $this->input->post('name_food');
         $price = $this->input->post('price');
