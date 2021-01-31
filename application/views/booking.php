@@ -28,6 +28,17 @@
     <div class="col-lg-6 col-md-6">
         <div id="cart_details">
             <h3 align="center">ตะกร้าสินค้า</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <th width="40%">Name</th>
+                    <th width="15%">Quantity</th>
+                    <th width="15%">Price</th>
+                    <th width="15%">Total</th>
+                    <th width="15%">Action</th>
+                </thead>
+                <tbody>
+                    <tr id="tr"></tr>
+                </tbody>
         </div>
     </div>
 
@@ -55,9 +66,20 @@
                         quantity: quantity
                     },
                     success: function(data) {
-                        alert("Product Added into Cart");
-                        $('#cart_details').html(data);
-                        $('#' + id_food).val('');
+                        // alert("Product Added into Cart");
+                        // $('#cart_details').html(data);
+                        // $('#' + id_food).val('');
+                        var html;
+                    for (i = 0; i < data.length; i++) {
+                        html += '<tr>'+
+                            '<td>' + data[i].name_food + '</td>' +
+                            '<td>' + data[i].qty + '</td>' +
+                            '<td>' + data[i].price + '</td>' +
+                            '<td>' + data[i].qty + '</td>' +
+                            '<td>' + data[i].price + '</td>' +
+                        '</tr>';
+                    }
+                    $('#tr').first().after(html);
                     }
                 });
             } else {
@@ -103,16 +125,17 @@
     });
 </script>
 <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-    <script src="liff-starter.js"></script>
-    <script>
-        window.onload = function (e) {
-            liff.init(function (data) {
-                initializeApp(data);
-            });
-        };
+<script src="liff-starter.js"></script>
+<script>
+    window.onload = function(e) {
+        liff.init(function(data) {
+            initializeApp(data);
+        });
+    };
 
-        function initializeApp(data) {
-            document.getElementById('userid').value = data.context.userId;
-        }
-    </script>
-    </html>
+    function initializeApp(data) {
+        document.getElementById('userid').value = data.context.userId;
+    }
+</script>
+
+</html>
