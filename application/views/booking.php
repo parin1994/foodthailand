@@ -70,13 +70,12 @@
                         // $('#cart_details').html(data);
                         // $('#' + id_food).val('');
                         var html;
-                    for (i = 0; i < data.length; i++) {
                         html += '<tr>'+
                             '<td>' + data[i].name_food + '</td>' +
                             '<td>' + data[i].quantity + '</td>' +
                             '<td>' + data[i].price + '</td>' 
                         '</tr>';
-                    }
+
                     $('#tr').after(html);
                     }
                 });
