@@ -87,8 +87,6 @@
             }
         });
 
-        $('#cart_details').load("<?php echo base_url(); ?>booking/load");
-
         $(document).on('click', '.remove_inventory', function() {
             var row_id = $(this).attr("id");
             if (confirm("Are you sure you want to remove this?")) {
