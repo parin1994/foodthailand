@@ -13,7 +13,6 @@
         <div class="col-lg-6 col-md-6">
             <div class="table-responsive">
                 <h3 align="center">เมนูอาหาร</h3><br />
-                <input type="hidden" id="userid" name="userid" value="">
                 <?php foreach ($product as $row) { ?>
                     <div class="col-md-4" style="padding:16px; background-color:#f1f1f1; border:1px solid #ccc; margin-bottom:16px; height:400px" align="center">
                         <img src="<?php echo base_url($row->img) ?>" class="img-thumbnail" style="height: 100px; width: 100px;"><br />
@@ -26,6 +25,12 @@
             </div>
         </div>
     </div>
+    <div class="col-lg-6 col-md-6">
+        <div id="cart_details">
+            <h3 align="center">ตะกร้าสินค้า</h3>
+        </div>
+    </div>
+
     </div>
 </body>
 
@@ -51,13 +56,50 @@
                     },
                     success: function(data) {
                         alert("Product Added into Cart");
+                        $('#cart_details').html(data);
+                        $('#' + id_food).val('');
                     }
                 });
             } else {
                 alert("Please Enter quantity");
             }
         });
-        
+
+        $('#cart_details').load("<?php echo base_url(); ?>booking/load");
+
+        $(document).on('click', '.remove_inventory', function() {
+            var row_id = $(this).attr("id");
+            if (confirm("Are you sure you want to remove this?")) {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>booking/remove",
+                    method: "POST",
+                    data: {
+                        row_id: row_id
+                    },
+                    success: function(data) {
+                        alert("Product removed from Cart");
+                        $('#cart_details').html(data);
+                    }
+                });
+            } else {
+                return false;
+            }
+        });
+
+        $(document).on('click', '#clear_cart', function() {
+            if (confirm("Are you sure you want to clear cart?")) {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>booking/clear",
+                    success: function(data) {
+                        alert("Your cart has been clear...");
+                        $('#cart_details').html(data);
+                    }
+                });
+            } else {
+                return false;
+            }
+        });
+
     });
 </script>
 <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
