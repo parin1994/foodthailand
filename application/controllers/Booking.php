@@ -22,7 +22,6 @@ class Booking extends CI_Controller
     }
     public function add()
     {
-
         $id_food = $this->input->post('id_food');
         $name_food = $this->input->post('name_food');
         $price = $this->input->post('price');
@@ -35,6 +34,6 @@ class Booking extends CI_Controller
         );
         $this->session->set_userdata('cart', $data);
         $cart = $this->session->userdata('cart');
-        print_r($cart);
+        print_r('Cart'+$cart);
     }
 }
