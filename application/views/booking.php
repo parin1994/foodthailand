@@ -73,9 +73,9 @@
                         console.log(values.id_food);
                         var html;
                         html += '<tr>'+
-                            '<td>' + data.id_food + '</td>' +
-                            '<td>' + data.quantity + '</td>' +
-                            '<td>' + data.price + '</td>' 
+                            '<td>' + values.name_food + '</td>' +
+                            '<td>' + values.quantity + '</td>' +
+                            '<td>' + values.price + '</td>' 
                         '</tr>';
 
                     $('#tr').after(html);
