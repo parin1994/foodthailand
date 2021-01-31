@@ -66,6 +66,7 @@
                         quantity: quantity
                     },
                     success: function(data) {
+                        alert(data);
                         // alert("Product Added into Cart");
                         // $('#cart_details').html(data);
                         // $('#' + id_food).val('');
