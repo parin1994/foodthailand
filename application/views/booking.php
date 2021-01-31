@@ -38,12 +38,12 @@
                 <tbody>
                     <tr id="tr"></tr>
                 </tbody>
-                <button type="button" name="save" id="save" class="btn btn-primary" hidden>Save</button>
+        </div>
+        <div>
+            <button type="button" name="save" id="save" class="btn btn-primary" hidden>Save</button>
         </div>
     </div>
-    <div>
-        
-    </div>
+
 </body>
 
 
@@ -68,14 +68,14 @@
                     success: function(data) {
                         var values = $.parseJSON(data);
                         var html;
-                        html += '<tr>'+
+                        html += '<tr>' +
                             '<td>' + values.name_food + '</td>' +
                             '<td>' + values.quantity + '</td>' +
-                            '<td>' + values.price + '</td>'+
-                            '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove_inventory" id="'+ values.id_food+'">Remove</button></td>'
+                            '<td>' + values.price + '</td>' +
+                            '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove_inventory" id="' + values.id_food + '">Remove</button></td>'
                         '</tr>';
 
-                    $('#tr').after(html);
+                        $('#tr').after(html);
                     }
                 });
             } else {
