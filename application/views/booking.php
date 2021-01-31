@@ -33,7 +33,6 @@
                     <th width="40%">Name</th>
                     <th width="15%">Quantity</th>
                     <th width="15%">Price</th>
-                    <th width="15%">Total</th>
                     <th width="15%">Action</th>
                 </thead>
                 <tbody>
@@ -66,15 +65,12 @@
                     },
                     success: function(data) {
                         var values = $.parseJSON(data);
-                        var quantity = Integer.parseInt(values.quantity);
-                        var price = Integer.parseInt(values.price);
                         var html;
                         html += '<tr>'+
                             '<td>' + values.name_food + '</td>' +
                             '<td>' + values.quantity + '</td>' +
                             '<td>' + values.price + '</td>'
-                            '<td>' + price*quantity + '</td>'+ 
-                            '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove_inventory" id="'+ values.name_food+'">Remove</button></td>'
+                            '<td><button type="button" name="remove" id="'+ values.name_food+'">Remove</button></td>'
                         '</tr>';
 
                     $('#tr').after(html);
