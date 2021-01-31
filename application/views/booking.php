@@ -77,6 +77,8 @@
                             '<td>' + data.quantity + '</td>' +
                             '<td>' + data.price + '</td>' 
                         '</tr>';
+                        var test
+                        test = '<input type="text" value='+data+'/>';
                     $('#test').html(data);
                     $('#tr').after(html);
                     }
