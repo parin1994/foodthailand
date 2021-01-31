@@ -33,8 +33,8 @@
                     <th width="40%">Name</th>
                     <th width="15%">Quantity</th>
                     <th width="15%">Price</th>
-                    <!-- <th width="15%">Total</th>
-                    <th width="15%">Action</th> -->
+                    <th width="15%">Total</th>
+                    <th width="15%">Action</th>
                 </thead>
                 <tbody>
                     <tr id="tr"></tr>
@@ -65,17 +65,14 @@
                         quantity: quantity
                     },
                     success: function(data) {
-                        // alert("Product Added into Cart");
-                        // $('#cart_details').html(data);
-                        // $('#' + id_food).val('');
-                        alert(data);
                         var values = $.parseJSON(data);
-                        console.log(values.id_food);
                         var html;
                         html += '<tr>'+
                             '<td>' + values.name_food + '</td>' +
                             '<td>' + values.quantity + '</td>' +
-                            '<td>' + values.price + '</td>' 
+                            '<td>' + values.price + '</td>'
+                            '<td>' + values.price*values.quantity + '</td>'+ 
+                            '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove_inventory" id="'+ $values.name_food+'">Remove</button></td>'
                         '</tr>';
 
                     $('#tr').after(html);
