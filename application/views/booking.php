@@ -39,9 +39,9 @@
                     <tr id="tr"></tr>
                 </tbody>
         </div>
-        
     </div>
-    <button type="button" name="save" id="save" class="btn btn-primary" hidden>Save</button>
+    <div>
+        <button type="button" name="save" id="save" class="btn btn-primary" hidden>Save</button>
     </div>
 </body>
 
