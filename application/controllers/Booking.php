@@ -65,10 +65,10 @@ class Booking extends CI_Controller
             $count++;
             $output .= '
         <tr> 
-            <td>' . $items["name_food"] . '</td>
-            <td>' . $items["quantity"] . '</td>
-            <td>' . $items["price"] . '</td>
-            <td>' . $items["total"] . '</td>
+            <td>' . $items[0] . '</td>
+            <td>' . $items[1] . '</td>
+            <td>' . $items[2] . '</td>
+            <td>' . $items[3] . '</td>
             <td><button type="button" name="remove" class="btn btn-danger btn-xs remove_inventory" id="' . $items["rowid"] . '">Remove</button></td>
             </tr>
         ';
