@@ -38,7 +38,6 @@ class Booking extends CI_Controller
         );
         $this->session->set_userdata('cart', $data);
         $cart = $this->session->userdata('cart');
-        print_r($cart);
         echo $this->view();
     }
     public function view()
@@ -63,6 +62,7 @@ class Booking extends CI_Controller
         $count = 0;
         $cart = $this->session->userdata('cart');
         $resultObj1 = $this->ToObject($cart);
+        print_r($resultObj1);
         foreach ($resultObj1 as $item) {
             $count++;
             $output .= '
