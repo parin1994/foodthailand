@@ -72,7 +72,7 @@
                         alert(data);
                         var html;
                         html += '<tr>'+
-                            '<td>' + data.name_food + '</td>' +
+                            '<td>' + data.id_food + '</td>' +
                             '<td>' + data.quantity + '</td>' +
                             '<td>' + data.price + '</td>' 
                         '</tr>';
