@@ -69,7 +69,7 @@
                         // alert("Product Added into Cart");
                         // $('#cart_details').html(data);
                         // $('#' + id_food).val('');
-                        alert(data);
+                        alert(data.id_food);
                         var html;
                         html += '<tr>'+
                             '<td>' + data.id_food + '</td>' +
