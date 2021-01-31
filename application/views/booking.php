@@ -69,7 +69,7 @@
                         html += '<tr>'+
                             '<td>' + values.name_food + '</td>' +
                             '<td>' + values.quantity + '</td>' +
-                            '<td>' + values.price + '</td>'
+                            '<td>' + values.price + '</td>'+
                             '<td><button type="button" name="remove" id="'+ values.name_food+'">Remove</button></td>'
                         '</tr>';
 
