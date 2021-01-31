@@ -70,7 +70,7 @@
                         // $('#' + id_food).val('');
                         alert(data);
                         var values = $.parseJSON(data);
-                        console.log(values.name);
+                        console.log(values.id_food);
                         var html;
                         html += '<tr>'+
                             '<td>' + data.id_food + '</td>' +
