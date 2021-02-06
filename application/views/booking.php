@@ -28,7 +28,7 @@
     <div class="col-lg-6 col-md-6">
         <div id="cart_details">
             <h3 align="center">ตะกร้าสินค้า</h3>
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="foodTable">
                 <thead>
                     <th width="40%">Name</th>
                     <th width="15%">Quantity</th>
@@ -53,10 +53,27 @@
     $(document).ready(function() {
         $('#test').click(function(){
             console.log('test');
-            var a = $('#tr').val();
+            var a = $('#foodTable').val();
             var b = count(a);
             console.log(a);
             console.log(b);
+
+            var myTab = document.getElementById('empTable');
+
+        // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
+        for (i = 1; i < myTab.rows.length; i++) {
+
+            // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+            var objCells = myTab.rows.item(i).cells;
+            console.log(objCells);
+
+            // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
+            for (var j = 0; j < objCells.length; j++) {
+               var data = info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
+               console.log(data);
+            }
+            info.innerHTML = info.innerHTML + '<br />';     // ADD A BREAK (TAG).
+        }
         });
 
         $('.add_cart').click(function() {
