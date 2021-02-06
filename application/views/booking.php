@@ -62,6 +62,8 @@
 <script>
     $(document).ready(function() {
         $('#save').click(function() {
+            var id_table = $('#id_table').val();
+            console.log(id_table);
             var myTab = document.getElementById('foodTable');
             var myTableArray = [];
             $("table#foodTable tr").each(function() {
@@ -79,6 +81,7 @@
                     url: "<?php echo base_url(); ?>booking/create",
                     method: "POST",
                     data: {
+                        id_table: id_table,
                         myTableArray
                     },
                     success: function(data) {
