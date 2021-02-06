@@ -53,7 +53,7 @@
     $(document).ready(function() {
         $('#test').click(function(){
             console.log('test');
-            var a = $('#cart_details').val();
+            var a = $('#tr').val();
             console.log(a);
         });
 
