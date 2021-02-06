@@ -32,17 +32,16 @@ class Payment extends CI_Controller
             $this->load->library('upload', $config);
             $this->upload->do_upload('img');
             $source = './assets/content/' . $_FILES['img']['name'];
+
             $this->load->library('ftp');
             $ftp_config['hostname'] = 'www.ratszone.com';
             $ftp_config['username'] = 'ratszone';
             $ftp_config['password'] = 'Peng2903';
-            $config['port']     = 21;
-            $config['passive']  = FALSE;
             $ftp_config['debug']    = TRUE;
 
             //Connect to the remote server
             $this->ftp->connect($ftp_config);
-            $this->ftp->upload($_FILES['img']['tmp_name'], "/public_html/image/" . $_FILES['img']['name'], "ascii", 0775);
+            $this->ftp->upload($_FILES['img']['tmp_name'],"/public_html/image/".$_FILES['img']['name'],"ascii", 0775);
 
             //Close FTP connection
             $this->ftp->close();
