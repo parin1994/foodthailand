@@ -39,7 +39,7 @@
                     <tr id="tr"></tr>
                 </tbody>
 
-                <button type="submit" href="<?php echo base_url('booking/create_menu') ?>">test</button>
+                <button type="submit" id="test">test</button>
         </div>
         <div>
             <button type="button" name="save" id="save" class="btn btn-primary" href="<?php echo base_url('booking/create_menu') ?>">Save</button>
@@ -51,6 +51,9 @@
 
 <script>
     $(document).ready(function() {
+        $('.test').click(function(){
+            console.log('test');
+        });
 
         $('.add_cart').click(function() {
             var id_food = $(this).data("id_food");
