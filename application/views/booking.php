@@ -38,6 +38,8 @@
                 <tbody>
                     <tr id="tr"></tr>
                 </tbody>
+
+                <button type="submit" href="<?php echo base_url('booking/create_menu') ?>">test</button>
         </div>
         <div>
             <button type="button" name="save" id="save" class="btn btn-primary" href="<?php echo base_url('booking/create_menu') ?>">Save</button>
