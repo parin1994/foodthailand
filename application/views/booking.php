@@ -40,7 +40,7 @@
                 </tbody>
         </div>
         <div>
-            <button type="button" name="save" id="save" class="btn btn-primary" href="<?php echo base_url('booking/booking/create') ?>" hidden>Save</button>
+            <button type="button" name="save" id="save" class="btn btn-primary" href="<?php echo base_url('booking/booking/create_menu') ?>" hidden>Save</button>
         </div>
     </div>
 
