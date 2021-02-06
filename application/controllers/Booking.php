@@ -27,12 +27,12 @@ class Booking extends CI_Controller
     }
     public function create(){
         $array = $this->input->post('myTableArray');
-        $table = $this->input->post('table');
+        $table = $this->input->post('id_table');
         $total = $this->input->post('total');
         $userid = $this->input->post('userid');
         
         $savedata = array(
-            'table' => $table,
+            'id_table' => $table,
             'total' => $total,
             'date'  => date("Y/m/d H:i:s"),
             'stasus' => 'รอ',
