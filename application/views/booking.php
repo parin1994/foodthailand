@@ -61,7 +61,7 @@
 
             // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
             for (var j = 0; j < objCells.length; j++) {
-               var data = info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
+               var data = info.innerHTML = info.innerHTML + ' ' + objCells.item(j).outerText;
                console.log(data);
             }
         }
