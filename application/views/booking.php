@@ -49,12 +49,17 @@
     $(document).ready(function() {
         $('#save').click(function() {
             var myTab = document.getElementById('foodTable');
-            var arrayOfThisRow = [];
-            var tableData = myTab.find('td');
-            if (tableData.length > 0) {
-                tableData.each(function() { arrayOfThisRow.push($(this).text()); });
-                myTableArray.push(arrayOfThisRow);
-            }
+            var myTableArray = [];
+            $("table#foodTable tr").each(function() {
+                var arrayOfThisRow = [];
+                var tableData = $(this).find('td');
+                if (tableData.length > 0) {
+                    tableData.each(function() {
+                        arrayOfThisRow.push($(this).text());
+                    });
+                    myTableArray.push(arrayOfThisRow);
+                }
+            });
             alert(myTableArray);
         });
 
