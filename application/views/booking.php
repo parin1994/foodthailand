@@ -52,15 +52,17 @@
             console.log(myTab);
             var call = document.getElementById('foodTable').cells.length;
             console.log(call);
-            for (i = 1; i < myTab.rows.length; i++) {
+            var a = document.getElementById('foodTable').rows[0].cells[0].innerHTML;
+            console.log(a);
+            // for (i = 1; i < myTab.rows.length; i++) {
 
-                var objCells = myTab.rows.item(i).cells;
-                console.log(objCells);
+            //     var objCells = myTab.rows.item(i).cells;
+            //     console.log(objCells);
 
-                for (var j = 0; j < objCells.length; j++) {
-                    info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
-                }
-            }
+            //     for (var j = 0; j < objCells.length; j++) {
+            //         info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
+            //     }
+            // }
         });
 
         $('.add_cart').click(function() {
