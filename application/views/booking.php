@@ -48,6 +48,8 @@
 <script>
     $(document).ready(function() {
         $('#save').click(function(){
+            var count = document.getElementById('foodTable').rows.length;
+            console.log(count);
             var myTab = document.getElementById('foodTable');
             console.log(myTab);
         // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
@@ -55,13 +57,11 @@
 
             // GET THE CELLS COLLECTION OF THE CURRENT ROW.
             var objCells = myTab.rows.item(i).cells;
-            console.log(objCells,"obj");
+            console.log(objCells);
 
             // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
             for (var j = 0; j < objCells.length; j++) {
-               var data = innerText.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
-               data.
-               console.log(data);
+               info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
             }
         }
         });
