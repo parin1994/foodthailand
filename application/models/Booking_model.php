@@ -25,6 +25,12 @@ class booking_model extends CI_Model
         $this->db->insert('booking', $data);
         return $this->db->insert_id();
     }
+    public function read_table_all()
+    {
+        $this->db->select('*')->from('table');
+        $query = $this->db->get();
+        return $query->result();
+    }
     public function create_booking($savedata)
     {
         $data = array(

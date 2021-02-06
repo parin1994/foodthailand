@@ -18,6 +18,7 @@ class Booking extends CI_Controller
     public function index()
     {
         $data["product"] = $this->booking_model->read_all();
+        $data['store'] = $this->booking_model->read_table_all();
         $this->load->view("booking", $data);
     }
     function load()
