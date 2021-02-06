@@ -54,9 +54,7 @@
         $('#test').click(function(){
             console.log('test');
             var a = $('#foodTable').val();
-            var b = count(a);
             console.log(a);
-            console.log(b);
 
             var myTab = document.getElementById('empTable');
 
