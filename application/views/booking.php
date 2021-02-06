@@ -39,19 +39,15 @@
                     <tr id="tr"></tr>
                 </tbody>
             </table>
-                <button type="submit" id="test">test</button>
-        </div>
-        <div>
-            <button type="button" name="save" id="save" class="btn btn-primary" href="<?php echo base_url('booking/create_menu') ?>">Save</button>
+                <button type="submit"  id="save" class="btn btn-primary">save</button>
         </div>
     </div>
-
 </body>
 
 
 <script>
     $(document).ready(function() {
-        $('#test').click(function(){
+        $('#save').click(function(){
             console.log('test');
             var myTab = document.getElementById('foodTable');
             console.log(myTab);
