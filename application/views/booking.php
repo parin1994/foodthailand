@@ -60,7 +60,7 @@
                     myTableArray.push(arrayOfThisRow);
                 }
             });
-            alert(myTableArray);
+            console.log(myTableArray);
         });
 
         $('.add_cart').click(function() {
