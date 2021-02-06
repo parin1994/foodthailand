@@ -28,6 +28,7 @@ class Booking extends CI_Controller
     public function create(){
         $array = $this->input->post('myTableArray');
         $table = $this->input->post('id_table');
+        print_r($table);
         $total = $this->input->post('total');
         $userid = $this->input->post('userid');
         
