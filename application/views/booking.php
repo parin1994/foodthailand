@@ -13,6 +13,20 @@
         <div class="col-lg-6 col-md-6">
             <div class="table-responsive">
                 <h3 align="center">เมนูอาหาร</h3><br />
+                <div class="form-group col-12">
+                    <label for="InputBranch">เลือกโต๊ะ<span>*</span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                        </div>
+                        <select name="store" id="store" class="form-control required" required>
+                            <option selected="" disabled="">เลือกโต๊ะ</option>
+                            <?php foreach ($store as $value) { ?>
+                                <option value='<?php echo $value->id_table ?>'><?php echo $value->table ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
                 <?php foreach ($product as $row) { ?>
                     <div class="col-md-4" style="padding:16px; background-color:#f1f1f1; border:1px solid #ccc; margin-bottom:16px; height:400px" align="center">
                         <img src="<?php echo base_url($row->img) ?>" class="img-thumbnail" style="height: 100px; width: 100px;"><br />
