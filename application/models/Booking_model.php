@@ -22,6 +22,17 @@ class booking_model extends CI_Model {
         $this->db->insert('booking', $data);
         return $this->db->insert_id();
     }
+    public function create_menu($savedata){
+        $data = array(
+            'name_food' => $savedata ['name_food'],
+            'qty' => $savedata ['qty'],
+            'price' => $savedata ['price'],
+            'detail' => $savedata ['detail']
+           
+        );
+        $this->db->insert('order', $data);
+        return $this->db->insert_id();
+    }
     public function payment_booking($savedata){
         $data = array(
             'receipt' => $savedata ['receirt'],
