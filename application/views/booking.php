@@ -50,8 +50,9 @@
         $('#save').click(function() {
             var myTab = document.getElementById('foodTable');
             console.log(myTab);
-
-            var a = document.getElementById('foodTable').rows[0].cells[0].innerHTML;
+            var count = document.getElementById('foodTable').rows.length;
+            console.log(count);
+            var a = document.getElementById('foodTable').rows[1].cells[0].innerHTML;
             console.log(a);
             // for (i = 1; i < myTab.rows.length; i++) {
 
