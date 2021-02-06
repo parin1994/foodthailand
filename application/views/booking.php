@@ -53,7 +53,7 @@
     $(document).ready(function() {
         $('#test').click(function(){
             console.log('test');
-            var a = $('#tr').val(row_id);
+            var a = $('#tr').row_id(1);
             console.log(a);
         });
 
