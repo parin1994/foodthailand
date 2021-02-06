@@ -35,7 +35,7 @@ class Payment extends CI_Controller
             $this->load->library('ftp');
             $ftp_config['hostname'] = 'www.ratszone.com';
             $ftp_config['username'] = 'ratszone';
-            $ftp_config['password'] = 'peng2903';
+            $ftp_config['password'] = 'Peng2903';
             $config['port']     = 21;
             $config['passive']  = FALSE;
             $ftp_config['debug']    = TRUE;
