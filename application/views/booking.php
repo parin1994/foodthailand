@@ -53,6 +53,8 @@
     $(document).ready(function() {
         $('#test').click(function(){
             console.log('test');
+            var a = $('#cart_details').val();
+            console.log(a);
         });
 
         $('.add_cart').click(function() {
