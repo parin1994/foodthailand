@@ -53,8 +53,10 @@
     $(document).ready(function() {
         $('#test').click(function(){
             console.log('test');
-            var a = $('#tr').row_id(1);
+            var a = $('#tr').val();
+            var b = count(a);
             console.log(a);
+            console.log(b);
         });
 
         $('.add_cart').click(function() {
