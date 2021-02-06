@@ -56,8 +56,8 @@
             var a = $('#foodTable').val();
             console.log(a);
 
-            var myTab = document.getElementById('empTable');
-
+            var myTab = document.getElementById('foodTable');
+            console.log(myTab);
         // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
         for (i = 1; i < myTab.rows.length; i++) {
 
