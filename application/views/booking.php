@@ -61,6 +61,8 @@
                 }
             });
             console.log(myTableArray);
+            console.log(myTableArray[0][0]);
+            
         });
 
         $('.add_cart').click(function() {
