@@ -62,7 +62,7 @@
 <script>
     $(document).ready(function() {
         $('#save').click(function() {
-            var id_table = $(this).data("id_table");
+            var id_table = $('#id_table').val();
             console.log(id_table);
             var myTab = document.getElementById('foodTable');
             var myTableArray = [];
