@@ -48,7 +48,8 @@
 <script>
     $(document).ready(function() {
         $('#save').click(function(){
-            console.log('test');
+            var count = document.getElementById('foodTable').rows.length;
+            console.log(count);
             var myTab = document.getElementById('foodTable');
             console.log(myTab);
         // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
