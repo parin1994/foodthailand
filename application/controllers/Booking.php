@@ -35,7 +35,7 @@ class Booking extends CI_Controller
             'id_table' => $table,
             'total' => $total,
             'date'  => date("Y/m/d H:i:s"),
-            'stasus' => 'รอ',
+            'status' => 'รอ',
             'status_food' => 'รอ',
             'userid' => $userid
         );
