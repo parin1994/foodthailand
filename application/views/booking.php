@@ -39,7 +39,7 @@
                     <tr id="tr"></tr>
                 </tbody>
             </table>
-                <button type="submit"  id="save" class="btn btn-primary">save</button>
+            <button type="submit" id="save" class="btn btn-primary">save</button>
         </div>
     </div>
 </body>
@@ -47,23 +47,20 @@
 
 <script>
     $(document).ready(function() {
-        $('#save').click(function(){
-            var count = document.getElementById('foodTable').rows.length;
-            console.log(count);
+        $('#save').click(function() {
             var myTab = document.getElementById('foodTable');
             console.log(myTab);
-        // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
-        for (i = 1; i < myTab.rows.length; i++) {
+            var call = document.getElementById('foodTable').cells.length;
+            console.log(call);
+            for (i = 1; i < myTab.rows.length; i++) {
 
-            // GET THE CELLS COLLECTION OF THE CURRENT ROW.
-            var objCells = myTab.rows.item(i).cells;
-            console.log(objCells);
+                var objCells = myTab.rows.item(i).cells;
+                console.log(objCells);
 
-            // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
-            for (var j = 0; j < objCells.length; j++) {
-               info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
+                for (var j = 0; j < objCells.length; j++) {
+                    info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
+                }
             }
-        }
         });
 
         $('.add_cart').click(function() {
