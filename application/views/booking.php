@@ -38,7 +38,7 @@
                 <tbody>
                     <tr id="tr"></tr>
                 </tbody>
-
+            </table>
                 <button type="submit" id="test">test</button>
         </div>
         <div>
@@ -53,9 +53,6 @@
     $(document).ready(function() {
         $('#test').click(function(){
             console.log('test');
-            var a = $('#foodTable').val();
-            console.log(a);
-
             var myTab = document.getElementById('foodTable');
             console.log(myTab);
         // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
