@@ -19,7 +19,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                         </div>
-                        <select name="store" id="store" class="form-control required" required>
+                        <select id="id_table" class="form-control required" required>
                             <option selected="" disabled="">เลือกโต๊ะ</option>
                             <?php foreach ($store as $value) { ?>
                                 <option value='<?php echo $value->id_table ?>'><?php echo $value->table ?></option>
