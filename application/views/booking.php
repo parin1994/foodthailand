@@ -61,8 +61,16 @@
                 }
             });
             console.log(myTableArray);
-            console.log(myTableArray[0][0]);
-            
+            $.ajax({
+                    url: "<?php echo base_url(); ?>booking/create",
+                    method: "POST",
+                    data: {
+                        myTableArray
+                    },
+                    success: function(data) {
+                        alert('ok');
+                    }
+                });            
         });
 
         $('.add_cart').click(function() {
