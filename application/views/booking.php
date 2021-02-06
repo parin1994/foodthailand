@@ -64,7 +64,6 @@
                var data = info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
                console.log(data);
             }
-            info.innerHTML = info.innerHTML + '<br />';     // ADD A BREAK (TAG).
         }
         });
 
