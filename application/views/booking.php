@@ -51,7 +51,7 @@
 
 <script>
     $(document).ready(function() {
-        $('.test').click(function(){
+        $('#test').click(function(){
             console.log('test');
         });
 
