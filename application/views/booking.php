@@ -48,7 +48,7 @@
 <script>
     $(document).ready(function() {
         $('#save').click(function(){
-            var count = document.getElementById('foodTable').length;
+            var count = document.getElementById('foodTable').rows.length;
             console.log(count);
             var myTab = document.getElementById('foodTable');
             console.log(myTab);
