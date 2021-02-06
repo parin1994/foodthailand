@@ -52,7 +52,7 @@
             console.log(myTab);
             var count = document.getElementById('foodTable').rows.length;
             console.log(count);
-            var a = document.getElementById('foodTable').rows[1].cells[0].innerHTML;
+            var a = document.getElementById('foodTable').rows[1].cells[1].innerHTML;
             console.log(a);
             // for (i = 1; i < myTab.rows.length; i++) {
 
