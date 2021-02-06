@@ -49,20 +49,13 @@
     $(document).ready(function() {
         $('#save').click(function() {
             var myTab = document.getElementById('foodTable');
-            console.log(myTab);
-            var count = document.getElementById('foodTable').rows.length;
-            console.log(count);
-            var a = document.getElementById('foodTable').rows[2].cells[0].innerHTML;
-            console.log(a);
-            // for (i = 1; i < myTab.rows.length; i++) {
-
-            //     var objCells = myTab.rows.item(i).cells;
-            //     console.log(objCells);
-
-            //     for (var j = 0; j < objCells.length; j++) {
-            //         info.innerHTML = info.innerHTML + ' ' + objCells.item(j).innerHTML;
-            //     }
-            // }
+            var arrayOfThisRow = [];
+            var tableData = myTab.find('td');
+            if (tableData.length > 0) {
+                tableData.each(function() { arrayOfThisRow.push($(this).text()); });
+                myTableArray.push(arrayOfThisRow);
+            }
+            alert(myTableArray);
         });
 
         $('.add_cart').click(function() {
