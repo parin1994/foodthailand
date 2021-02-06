@@ -26,16 +26,8 @@ class Booking extends CI_Controller
     }
     public function create(){
         $array = $this->input->post('myTableArray');
-        $count = count($array);
-        print_r($count);
-        print_r($array);
 
-        // $savedata = array(
-        //     "name_food" => $name_food,
-        //     "qty" => $qty,
-        //     "price" => $price
-        // );
-        // $result = $this->booking_model->create_menu($savedata);
+        $result = $this->booking_model->create_menu($array);
     }
     public function add()
     {
