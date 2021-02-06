@@ -26,7 +26,19 @@ class Booking extends CI_Controller
     }
     public function create(){
         $array = $this->input->post('myTableArray');
-
+        $table = $this->input->post('table');
+        $total = $this->input->post('total');
+        $userid = $this->input->post('userid');
+        
+        $savedata = array(
+            'table' => $table,
+            'total' => $total,
+            'date'  => date("Y/m/d H:i:s"),
+            'stasus' => 'รอ',
+            'status_food' => 'รอ',
+            'userid' => $userid
+        );
+        $result1 = $this->booking_model->create_booking($savedata);
         $result = $this->booking_model->create_menu($array);
     }
     public function add()
