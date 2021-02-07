@@ -50,7 +50,7 @@ class booking_model extends CI_Model
         print_r($array_data);
         foreach($array_data as $a){
             $data = array(
-                   'id_booking' => $id,
+                //    'id_booking' => $id,
                    'name_food' => $a['0'],
                    'qty' => $a['1'],
                    'price'=>$a['2'],
