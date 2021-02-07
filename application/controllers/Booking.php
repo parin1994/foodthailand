@@ -28,7 +28,6 @@ class Booking extends CI_Controller
     public function create(){
         $array = $this->input->post('myTableArray');
         $table = $this->input->post('id_table');
-        print_r($table);
         $total = $this->input->post('total');
         $userid = $this->input->post('userid');
         
@@ -41,6 +40,8 @@ class Booking extends CI_Controller
             'userid' => $userid
         );
         $result1 = $this->booking_model->create_booking($savedata);
+        print_r($result1);
+        exit();
         $result = $this->booking_model->create_menu($array);
     }
     public function add()
