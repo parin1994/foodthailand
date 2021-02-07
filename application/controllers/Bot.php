@@ -230,7 +230,7 @@ class Bot extends CI_Controller
                                     }
                                     $result = $this->booking_model->read_userid($userId);
                                     foreach ($result as $value) {
-                                        $textReplyMessage =  "โต๊ะที่ :".$value->id_table+"สถานะอาหาร :".$value->status_food;
+                                        $textReplyMessage =  "โต๊ะที่ : ".$value->id_table." สถานะอาหาร : ".$value->status_food;
                                     }                                    
                                     $replyData = new TextMessageBuilder($textReplyMessage);
                                     break;
