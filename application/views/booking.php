@@ -59,12 +59,37 @@
         </div>
     </div>
 </body>
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script src="liff-starter.js"></script>
+<script>
+    window.onload = function(e) {
+        liff.init( function(data) {
+             runApp();
+        });
+    };
 
+    function runApp() {
+        liff.getProfile().then(profile => {
+            document.getElementById("userid").value = profile.userId;
+            
+        }).catch(err => console.error(err));
+    }
+    
+    liff.init({
+        liffId: "1655534162-7ao0X1Pb"
+    }, () => {
+        if (liff.isLoggedIn()) {
+            runApp()
+        } else {
+            liff.login();
+        }
+    }, err => console.error(err.code, error.message));
+</script>
 
 <script>
     $(document).ready(function() {
         $('#save').click(function() {
-            var userid = $(this).val();
+            let userid = document.getElementById("userid").value
             var id_table = $('#id_table').val();
             console.log(id_table);
             var myTab = document.getElementById('foodTable');
