@@ -28,6 +28,7 @@
                         </select>
                     </div>
                 </div>
+                <input type="hidden" id="userid" name="userid" value="">
                 <?php foreach ($product as $row) { ?>
                     <div class="col-md-4" style="padding:16px; background-color:#f1f1f1; border:1px solid #ccc; margin-bottom:16px; height:400px" align="center">
                         <img src="<?php echo base_url($row->img) ?>" class="img-thumbnail" style="height: 100px; width: 100px;"><br />
@@ -63,6 +64,7 @@
 <script>
     $(document).ready(function() {
         $('#save').click(function() {
+            var userid = $(this).val();
             var id_table = $('#id_table').val();
             console.log(id_table);
             var myTab = document.getElementById('foodTable');
@@ -83,6 +85,7 @@
                     method: "POST",
                     data: {
                         id_table: id_table,
+                        userid : userid,
                         myTableArray
                     },
                     success: function(data) {
