@@ -56,8 +56,7 @@ class booking_model extends CI_Model
                    'price'=>$a['2'],
                    'detail' =>$a['0']
                 );
-                
-                return $this->db->insert('order', $data); 
+                return $this->db->insert_batch('order', $data); 
         }
     }
     public function payment_booking($savedata)
