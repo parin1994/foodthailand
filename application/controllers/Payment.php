@@ -31,6 +31,7 @@ class Payment extends CI_Controller
             $ftp_config['username'] = 'ratszone';
             $ftp_config['password'] = 'Peng2903';
             $ftp_config['debug']    = TRUE;
+            $ftp_config['upload_path'] = './assets/img/';
 
             //Connect to the remote server
             $this->ftp->connect($ftp_config);
