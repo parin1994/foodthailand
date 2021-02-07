@@ -53,7 +53,6 @@ class booking_model extends CI_Model
                    'name_food' => $a['0'],
                    'qty' => $a['1'],
                    'price'=>$a['2'],
-                   'detail' =>$a['0']
                 );
          $this->db->insert('order', $data); 
         }
