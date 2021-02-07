@@ -34,11 +34,11 @@ class Payment extends CI_Controller
 
             //Connect to the remote server
             $this->ftp->connect($ftp_config);
-            $this->ftp->upload($_FILES['img']['tmp_name'],"/public_html/image/".$_FILES['img']['name'],"ascii", 0775);
+            $this->ftp->upload($_FILES['img']['tmp_name'],"/assets/img/".$_FILES['img']['name'],"ascii", 0775);
 
             //Close FTP connection
             $this->ftp->close();
-            $receipt = './image/' . $_FILES['img']['name'];
+            $receipt = './assets/img/' . $_FILES['img']['name'];
         }
         $savedata = array(
 

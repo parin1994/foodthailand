@@ -299,16 +299,9 @@ class Bot extends CI_Controller
                                         );
                                         break;
 
-                            case "บริการ":
-                                $textReplyMessage = "บริการของศูนย์บริการทั้งหมดจะมี ล้างรถ ขัดสี ขัดเงา ดูดฝุ่น ครับ";
-                                $replyData = new TextMessageBuilder($textReplyMessage);
-                                break;
-                            case "ราคา":
-                                $textReplyMessage = "ราคาของบริการล้างสีจะอยู่ในช่วง 150 - 300 บาทครับ";
-                                $replyData = new TextMessageBuilder($textReplyMessage);
-                                break;
+                           
                             case "เวลาเปิด-ปิด":
-                                $textReplyMessage = "ศูนย์บริการล้างรถจะเปิดระหว่าง 8:30 - 17:30น.";
+                                $textReplyMessage = "ร้านอาหาระเปิดระหว่าง 8:30 - 17:30น.";
                                 $replyData = new TextMessageBuilder($textReplyMessage);
                                 break;
                             default:
