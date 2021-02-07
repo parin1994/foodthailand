@@ -40,9 +40,7 @@ class Booking extends CI_Controller
             'userid' => $userid
         );
         $result1 = $this->booking_model->create_booking($savedata);
-        print_r($result1);
-        exit();
-        $result = $this->booking_model->create_menu($array);
+        $result = $this->booking_model->create_menu($array,$result1);
     }
     public function add()
     {

@@ -45,7 +45,7 @@ class booking_model extends CI_Model
         $this->db->insert('booking', $data);
         return $this->db->insert_id();
     }
-    public function create_menu($array_data)
+    public function create_menu($array_data,$id)
     {
         // $data = array(
         //     'name_food' => $savedata ['name_food'],
@@ -57,6 +57,7 @@ class booking_model extends CI_Model
         // $this->db->insert('order', $data);
         foreach($array_data as $a){
             $data = array(
+                   'id_booking' => $id,
                    'name_food' => $a['0'],
                    'qty' => $a['1'],
                    'price'=>$a['2'],
