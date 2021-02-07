@@ -45,7 +45,7 @@ class booking_model extends CI_Model
         $this->db->insert('booking', $data);
         return $this->db->insert_id();
     }
-    public function create_menu($array_data,$id)
+    public function create_menu($array_data)
     {
         print_r($array_data);
         foreach($array_data as $a){
