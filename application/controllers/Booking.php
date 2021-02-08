@@ -31,6 +31,16 @@ class Booking extends CI_Controller
         $total = $this->input->post('total');
         $userid = $this->input->post('userid');
         
+        foreach($array AS $a){
+            $data = array(
+                'name_food' => $a['0'],
+                'qty' => $a['1'],
+                'price'=>$a['2'],
+                'total'=>$a['1']*$a['2']
+             );
+        }
+        print_r($data);
+
         $savedata = array(
             'id_table' => $table,
             'total' => $total,
