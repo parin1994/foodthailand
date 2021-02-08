@@ -15,9 +15,8 @@ class Payment extends CI_Controller
     public function index()
     {
         $this->load->helper('url');
-        // $userid = $this->input->post('userid');
-        // $result = $this->booking_model->read_userid($userid);
-        $userid = "Uf63bfc2528be79c00545ec4e8bb581bc";
+        $userid = $this->input->post('userid');
+        $result = $this->booking_model->read_userid($userid);
         $result['read'] = $this->booking_model->read_order($userid);
         print_r($result['read']);
         exit();
