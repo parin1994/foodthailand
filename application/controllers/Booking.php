@@ -39,14 +39,11 @@ class Booking extends CI_Controller
                 'total'=>$a['1']*$a['2']
              );
         }
-        print_r($data);
         $value = array_sum(array_column($data,'total'));
-        print_r($value);
-        
 
         $savedata = array(
             'id_table' => $table,
-            'total' => $total,
+            'total' => $value,
             'date'  => date("Y/m/d H:i:s"),
             'status' => 'รอ',
             'status_food' => 'รอ',
