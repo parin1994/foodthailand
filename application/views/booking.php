@@ -114,7 +114,7 @@
                         myTableArray
                     },
                     success: function(data) {
-                        alert('ok');
+                        alert('บันทึกข้อมูลสำเร็จ');
                     }
                 });            
         });

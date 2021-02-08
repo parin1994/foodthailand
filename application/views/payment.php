@@ -80,7 +80,17 @@
 <body>
     <div class="container-contact100" style="background-color:white;">
         <div class="card col-12 col-md-6 offset-md-2">
-
+        <span class="col-12 text-center">
+                    <h5>ช่องทางการชำระเงิน</h5>
+                    <br>
+                    <?php foreach ($read as $value) { ?>
+                        <img src="#" class="thumbnail" style="height: 150px; width: 150px;">
+                        <br><br>
+                        <?php echo $value->id_table ?>
+                        <br>
+                        <?php echo $value->total ?>
+                        <br>
+                    <?php } ?>
             <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
         
                 <div class="container">

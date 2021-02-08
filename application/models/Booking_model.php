@@ -95,4 +95,10 @@ class booking_model extends CI_Model
         $this->db->update('booking');
         return $this->db->affected_rows();
     }
+    public function read_order($userid)
+    {
+        $sql = "SELECT * FROM booking where userid = '$userid' and status = 'รอ'";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
 }
