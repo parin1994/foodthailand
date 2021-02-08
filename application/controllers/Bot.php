@@ -229,8 +229,12 @@ class Bot extends CI_Controller
                                         $userId = $userData['userId'];
                                     }
                                     $result = $this->booking_model->read_userid($userId);
+                                    if($result >= 1 ){
                                     foreach ($result as $value) {
                                         $textReplyMessage =  "โต๊ะที่ : ".$value->id_table." สถานะอาหาร : ".$value->status_food;
+                                    }
+                                }else{
+                                        $textReplyMessage =  "คุณไม่สถานะอาหารที่กำลังรอส่ง";
                                     }                                    
                                     $replyData = new TextMessageBuilder($textReplyMessage);
                                     break;
