@@ -169,7 +169,6 @@
                             <th style="width:5%;text-align:center">รายการอาหาร</th>
                             <th style="width:10%;text-align:center">จำนวน</th>
                             <th style="width:10%;text-align:center">ราคา</th>
-                            <th style="width:10%;text-align:center">detial</th>
                         </tr>
                     </thead>
                         <tbody>
@@ -220,7 +219,6 @@
                             '<td>' + data[i].name_food + '</td>' +
                             '<td>' + data[i].qty + '</td>' +
                             '<td>' + data[i].price + '</td>' +
-                            '<td>' + data[i].detail + '</td>' +
                         '</tr>';
                     }
                     $('#tr').first().after(html);
