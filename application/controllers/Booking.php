@@ -40,6 +40,12 @@ class Booking extends CI_Controller
              );
         }
         print_r($data);
+        $length = count($data);
+        print_r($length);
+        for ($i = 0; $i < $length; $i++) {
+            $test[] = $data[$i][3]+$data[$i+1][3];
+        }
+        print_r($test);
 
         $savedata = array(
             'id_table' => $table,
