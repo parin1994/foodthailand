@@ -32,7 +32,7 @@ class Booking extends CI_Controller
         $userid = $this->input->post('userid');
         
         foreach($array AS $a){
-            $data = array(
+            $data[] = array(
                 'name_food' => $a['0'],
                 'qty' => $a['1'],
                 'price'=>$a['2'],
