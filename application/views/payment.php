@@ -160,6 +160,7 @@
         function runApp() {
             liff.getProfile().then(profile => {
                 let userid = document.getElementById("userid").value = profile.userId;
+                console.log(userid);
                 $.ajax({
                 url: "<?php echo site_url('payment/index'); ?>",
                 method: "POST",
@@ -181,7 +182,7 @@
         }
 
         liff.init({
-            liffId: "1653826205-RvdGdXwZ"
+            liffId: "1655534162-PlY90bgn"
         }, () => {
             if (liff.isLoggedIn()) {
                 runApp()
