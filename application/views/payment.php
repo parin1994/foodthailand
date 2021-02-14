@@ -98,7 +98,7 @@
                             </tbody>
                         </table>
                     </div>
-                <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
+                <!-- <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data"> -->
                     
 
                     <div class="container">
@@ -110,11 +110,11 @@
                     </div>
                     <br>
                     <div class="container-contact100-form-btn">
-                        <button type="submit" class="contact100-form-btn">
+                        <button onclick="myFunction()" class="contact100-form-btn">
                             ยืนยัน
                         </button>
                     </div>
-                </form>
+                <!-- </form> -->
         </div>
     </div>
 
@@ -185,6 +185,13 @@
         //     runApp();
         // });
     };
+
+    function myFunction() {
+        var test = $('id_booking').val();
+        var img = $('img').val();
+        console.log(test);
+        console.log(img);
+}
 
     function ranApp(){
         $.ajax({
