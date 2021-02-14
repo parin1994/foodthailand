@@ -36,20 +36,26 @@ class Payment extends CI_Controller
 
         $receipt = '';
         if (isset($_FILES['img']['name'])) {
-            $this->load->library('ftp');
-            $ftp_config['hostname'] = 'www.ratszone.com';
-            $ftp_config['username'] = 'ratszone';
-            $ftp_config['password'] = 'Peng2903';
-            $ftp_config['debug']    = TRUE;
-            $ftp_config['upload_path'] = './assets/img/';
+            $config['upload_path'] = './assets/content';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = '200';
+            $this->load->library('upload', $config);
+            $this->upload->do_upload('img');
+            $source = './assets/content/' . $_FILES['img']['name'];
+            // $this->load->library('ftp');
+            // $ftp_config['hostname'] = 'www.ratszone.com';
+            // $ftp_config['username'] = 'ratszone';
+            // $ftp_config['password'] = 'Peng2903';
+            // $ftp_config['debug']    = TRUE;
+            // $ftp_config['upload_path'] = './assets/img/';
 
-            //Connect to the remote server
-            $this->ftp->connect($ftp_config);
-            $this->ftp->upload($_FILES['img']['tmp_name'],"/assets/img/".$_FILES['img']['name'],"ascii", 0775);
+            // //Connect to the remote server
+            // $this->ftp->connect($ftp_config);
+            // $this->ftp->upload($_FILES['img']['tmp_name'],"/assets/img/".$_FILES['img']['name'],"ascii", 0775);
 
-            //Close FTP connection
-            $this->ftp->close();
-            $receipt = './assets/img/' . $_FILES['img']['name'];
+            // //Close FTP connection
+            // $this->ftp->close();
+            // $receipt = './assets/img/' . $_FILES['img']['name'];
         }
         $savedata = array(
 

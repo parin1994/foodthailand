@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
-        <script> var vConsole = new VConsole();</script>
+<script>
+    var vConsole = new VConsole();
+</script>
 <script>
     var vConsole = new VConsole();
 </script>
@@ -80,39 +82,39 @@
 <body>
     <div class="container-contact100" style="background-color:white;">
         <div class="card col-12 col-md-6 offset-md-2">
-        <span class="col-12 text-center">
-                    <h5>ช่องทางการชำระเงิน</h5>
-                    <input type="hidden" id="userid" name="userid" value="">
-                    <br>
+            <span class="col-12 text-center">
+                <h5>ช่องทางการชำระเงิน</h5>
+                <input type="hidden" id="userid" name="userid" value="">
+                <br>
+
+                <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
                     <div style="overflow-x:auto;">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
                                     <th style="width:10%;text-align:center">id</th>
                                     <th style="width:20%;text-align:center">total</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table">
-                                </tbody>
-                                
-                            </table>
-                        </div>
-            <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
-        
-                <div class="container">
-                <span class="col-12 text-center">
-                <h5>อัพโหลดใบเสร็จการชำระเงิน</h5>
-                <br>
-                <input type="file" name="img" id="img" >
-                </span>
-                </div>
-                <br>
-                <div class="container-contact100-form-btn">
-                    <button  class="contact100-form-btn">
-                        ยืนยัน
-                    </button>
-                </div>
-            </form>
+                                </tr>
+                            </thead>
+                            <tbody id="table">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="container">
+                        <span class="col-12 text-center">
+                            <h5>อัพโหลดใบเสร็จการชำระเงิน</h5>
+                            <br>
+                            <input type="file" name="img" id="img">
+                        </span>
+                    </div>
+                    <br>
+                    <div class="container-contact100-form-btn">
+                        <button class="contact100-form-btn">
+                            ยืนยัน
+                        </button>
+                    </div>
+                </form>
         </div>
     </div>
 
@@ -155,19 +157,19 @@
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="3d44b465189b22b734a3929d-|49" defer=""></script>
 </body>
 <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-    <script src="liff-starter.js"></script>
-    <script>
-        window.onload = function(e) {
-            liff.init(function(data) {
-                runApp();
-            });
-        };
+<script src="liff-starter.js"></script>
+<script>
+    window.onload = function(e) {
+        liff.init(function(data) {
+            runApp();
+        });
+    };
 
-        function runApp() {
-            liff.getProfile().then(profile => {
-                let userid = document.getElementById("userid").value = profile.userId;
-                console.log(userid);
-                $.ajax({
+    function runApp() {
+        liff.getProfile().then(profile => {
+            let userid = document.getElementById("userid").value = profile.userId;
+            console.log(userid);
+            $.ajax({
                 url: "<?php echo site_url('payment/request'); ?>",
                 method: "POST",
                 data: {
@@ -179,28 +181,29 @@
                     console.log(data);
                     var html = '';
                     var i;
-                        data.forEach(v => {
-                            html += '<tr><td style="width:10%;text-align:center">'+v.id_booking+'</td><td style="width:50px;text-align:center">'+v.total+'</td><tr>';
-                        })
+                    data.forEach(v => {
+                        html += '<tr><td style="width:10%;text-align:center" id="id_booking">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
+                    })
                     $('#table').html(html);
-                   
+
                 }
 
-                
+
             });
-                
 
-            }).catch(err => console.log('ERROR MESSEGE:'+err));
+
+        }).catch(err => console.log('ERROR MESSEGE:' + err));
+    }
+
+    liff.init({
+        liffId: "1655534162-PlY90bgn"
+    }, () => {
+        if (liff.isLoggedIn()) {
+            runApp()
+        } else {
+            liff.login();
         }
+    }, err => console.error(err.code, error.message));
+</script>
 
-        liff.init({
-            liffId: "1655534162-PlY90bgn"
-        }, () => {
-            if (liff.isLoggedIn()) {
-                runApp()
-            } else {
-                liff.login();
-            }
-        }, err => console.error(err.code, error.message));
-    </script>
 </html>
