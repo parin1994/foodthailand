@@ -66,9 +66,9 @@ class Payment extends CI_Controller
         $result = $this->booking_model->payment_booking($savedata);
 
         //$this->load->view('booking');
-        echo "<script>
-                alert('บันทึกข้อมูลสำเร็จ');
-                window.location.href='https://foodthailand.herokuapp.com/payment';
-                </script>";
+        // echo "<script>
+        //         alert('บันทึกข้อมูลสำเร็จ');
+        //         window.location.href='https://foodthailand.herokuapp.com/payment';
+        //         </script>";
     }
 }
