@@ -37,6 +37,7 @@ class Payment extends CI_Controller
         $img = $this->input->post('img');
         print_r($id_booking);
         print_r($img);
+        exit;
         $receipt = '';
         if (isset($_FILES['img']['name'])) {
             $config['upload_path'] = './assets/content';
