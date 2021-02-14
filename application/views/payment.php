@@ -188,7 +188,9 @@
 
     function myFunction() {
         var x = document.getElementById("img");
+        var a = document.getElementById("id_booking");
         console.log(x);
+        console.log(a);
         var test = $('id_booking').val();
         var img = $('img').val();
         console.log(test);
