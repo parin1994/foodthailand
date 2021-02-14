@@ -86,9 +86,7 @@
                 <h5>ช่องทางการชำระเงิน</h5>
                 <input type="hidden" id="userid" name="userid" value="">
                 <br>
-
-                <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
-                    <div style="overflow-x:auto;">
+<div style="overflow-x:auto;">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -100,6 +98,8 @@
                             </tbody>
                         </table>
                     </div>
+                <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
+                    
 
                     <div class="container">
                         <span class="col-12 text-center">
