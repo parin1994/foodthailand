@@ -160,20 +160,18 @@
 <script src="liff-starter.js"></script>
 <script>
     window.onload = function(e) {
-        liff.init(function(data) {
-            runApp();
-        });
+        runApp();
+        // liff.init(function(data) {
+        //     runApp();
+        // });
     };
 
-    function runApp() {
-        liff.getProfile().then(profile => {
-            let userid = document.getElementById("userid").value = profile.userId;
-            console.log(userid);
-            $.ajax({
+    function ranApp(){
+        $.ajax({
                 url: "<?php echo site_url('payment/request'); ?>",
                 method: "POST",
                 data: {
-                    userid: userid
+                    userid: 'U37ce1b2edf6c2556eeed082151a34cfe'
                 },
                 async: true,
                 dataType: 'json',
@@ -190,20 +188,48 @@
 
 
             });
-
-
-        }).catch(err => console.log('ERROR MESSEGE:' + err));
     }
+    
 
-    liff.init({
-        liffId: "1655534162-PlY90bgn"
-    }, () => {
-        if (liff.isLoggedIn()) {
-            runApp()
-        } else {
-            liff.login();
-        }
-    }, err => console.error(err.code, error.message));
+    // function runApp() {
+    //     liff.getProfile().then(profile => {
+    //         let userid = document.getElementById("userid").value = profile.userId;
+    //         console.log(userid);
+    //         $.ajax({
+    //             url: "<?php echo site_url('payment/request'); ?>",
+    //             method: "POST",
+    //             data: {
+    //                 userid: userid
+    //             },
+    //             async: true,
+    //             dataType: 'json',
+    //             success: function(data) {
+    //                 console.log(data);
+    //                 var html = '';
+    //                 var i;
+    //                 data.forEach(v => {
+    //                     html += '<tr><td style="width:10%;text-align:center" id="id_booking">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
+    //                 })
+    //                 $('#table').html(html);
+
+    //             }
+
+
+    //         });
+
+
+    //     }).catch(err => console.log('ERROR MESSEGE:' + err));
+    // }
+
+    // liff.init({
+    //     liffId: "1655534162-PlY90bgn"
+    // }, () => {
+    //     if (liff.isLoggedIn()) {
+    //         runApp()
+    //     } else {
+    //         liff.login();
+    //     }
+    // }, err => console.error(err.code, error.message));
 </script>
 
 </html>
