@@ -35,6 +35,7 @@ class Payment extends CI_Controller
     {
         $id_booking = $this->input->post('id_booking');
         $img = $this->input->post('img');
+        print_r('lllll');
         print_r($id_booking);
         print_r($img);
         exit;
