@@ -191,10 +191,21 @@
         var a = document.getElementById("id_booking").innerHTML;
         console.log(x);
         console.log(a);
-        var test = $('id_booking').val();
-        var img = $('img').val();
-        console.log(test);
-        console.log(img);
+        $.ajax({
+                url: "<?php echo site_url('payment/payment_booking'); ?>",
+                method: "POST",
+                data: {
+                    id_booking: a,
+                    img: x
+                },
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                }
+
+
+            });
 }
 
     function ranApp(){
