@@ -188,16 +188,17 @@
 
     function myFunction() {
         var x = document.querySelector("#img").files[0];
-        console.log(x.files[0].name);
         var a = document.getElementById("id_booking").innerHTML;
         console.log(x);
         console.log(a);
+        var fileData = new FormData();
+        fileData.append("img", x);
         $.ajax({
                 url: "<?php echo site_url('payment/payment_booking'); ?>",
                 method: "POST",
                 data: {
                     id_booking: a,
-                    img: x
+                    img: fileData
                 },
                 async: true,
                 dataType: 'json',
