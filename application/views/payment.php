@@ -163,7 +163,7 @@
                 let userid = document.getElementById("userid").value = profile.userId;
                 console.log(userid);
                 $.ajax({
-                url: "<?php echo site_url('payment/index'); ?>",
+                url: "<?php echo site_url('payment/request'); ?>",
                 method: "POST",
                 data: {
                     userid: userid
