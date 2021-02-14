@@ -84,14 +84,19 @@
                     <h5>ช่องทางการชำระเงิน</h5>
                     <input type="hidden" id="userid" name="userid" value="">
                     <br>
-                    <?php foreach ($read as $value) { ?>
-                        <img src="#" class="thumbnail" style="height: 150px; width: 150px;">
-                        <br><br>
-                        <?php echo $value->id_table ?>
-                        <br>
-                        <?php echo $value->total ?>
-                        <br>
-                    <?php } ?>
+                    <div style="overflow-x:auto;">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                    <th style="width:10%;text-align:center">id</th>
+                                    <th style="width:20%;text-align:center">total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table">
+                                </tbody>
+                                
+                            </table>
+                        </div>
             <form action="<?php echo base_url('payment/payment_booking') ?>" method="post" class="contact100-form validate-form" style="width:100%;" enctype="multipart/form-data">
         
                 <div class="container">
@@ -171,7 +176,13 @@
                 async: true,
                 dataType: 'json',
                 success: function(data) {
-                    console.log(data)
+                    console.log(data);
+                    var html = '';
+                    var i;
+                        data.forEach(v => {
+                            html += '<tr><td style="width:10%;text-align:center">'+v.id_booking+'</td><td style="width:50px;text-align:center">'+v.total+'</td><tr>';
+                        })
+                    $('#table').html(html);
                    
                 }
 
