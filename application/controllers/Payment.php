@@ -42,7 +42,7 @@ class Payment extends CI_Controller
             $config['max_size'] = '200';
             $this->load->library('upload', $config);
             $this->upload->do_upload('img');
-            $source = './assets/content/' . $_FILES['img']['name'];
+            $receipt = './assets/content/' . $_FILES['img']['name'];
             // $this->load->library('ftp');
             // $ftp_config['hostname'] = 'www.ratszone.com';
             // $ftp_config['username'] = 'ratszone';
