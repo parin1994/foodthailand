@@ -156,11 +156,31 @@
     </script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="3d44b465189b22b734a3929d-|49" defer=""></script>
 </body>
-<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-<script src="liff-starter.js"></script>
+<!-- <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script src="liff-starter.js"></script> -->
 <script>
     window.onload = function(e) {
-        runApp();
+        $.ajax({
+                url: "<?php echo site_url('payment/request'); ?>",
+                method: "POST",
+                data: {
+                    userid: 'U37ce1b2edf6c2556eeed082151a34cfe'
+                },
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    var html = '';
+                    var i;
+                    data.forEach(v => {
+                        html += '<tr><td style="width:10%;text-align:center" id="id_booking">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
+                    })
+                    $('#table').html(html);
+
+                }
+
+
+            });
         // liff.init(function(data) {
         //     runApp();
         // });
