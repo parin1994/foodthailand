@@ -82,6 +82,7 @@
         <div class="card col-12 col-md-6 offset-md-2">
         <span class="col-12 text-center">
                     <h5>ช่องทางการชำระเงิน</h5>
+                    <input type="hidden" id="userid" name="userid" value="">
                     <br>
                     <?php foreach ($read as $value) { ?>
                         <img src="#" class="thumbnail" style="height: 150px; width: 150px;">
