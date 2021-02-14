@@ -191,14 +191,15 @@
         var a = document.getElementById("id_booking").innerHTML;
         console.log(x);
         console.log(a);
-        var fileData = new FormData();
-        fileData.append("img", x);
+        var file_data = $("#img").prop("files")[0];
+        var form_data = new FormData();
+        form_data.append("img", file_data);
+        form_data.append("id_booking", a);           
         $.ajax({
                 url: "<?php echo site_url('payment/payment_booking'); ?>",
                 method: "POST",
                 data: {
-                    id_booking: a,
-                    img: fileData
+                    form_data
                 },
                 async: true,
                 dataType: 'json',
