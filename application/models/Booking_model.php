@@ -60,11 +60,13 @@ class booking_model extends CI_Model
     public function payment_booking($savedata)
     {
         $data = array(
-            'receipt' => $savedata['receirt'],
+            'id_booking' => $savedata['id_booking'],
+            'receipt' => $savedata['receipt'],
 
         );
-        $this->db->insert('booking', $data);
-        return $this->db->insert_id();
+        $this->db->where('id_booking', $savedata['id_booking']);
+        $this->db->update('booking', $data);
+        return $this->db->affected_rows();
     }
     public function read_all()
     {

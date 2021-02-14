@@ -32,6 +32,7 @@ class Payment extends CI_Controller
     }
     public function payment_booking()
     {
+        $id_booking = $this->input->post('id_booking');
         $userid = $this->input->post('userid');
 
         $receipt = '';
@@ -58,8 +59,8 @@ class Payment extends CI_Controller
             // $receipt = './assets/img/' . $_FILES['img']['name'];
         }
         $savedata = array(
-
-            'img' => $receipt,
+            'id_booking' => $id_booking,
+            'receipt' => $receipt,
         );
         $result = $this->booking_model->payment_booking($savedata);
 
