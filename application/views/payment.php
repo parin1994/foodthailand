@@ -187,7 +187,7 @@
     };
 
     function myFunction() {
-        var x = document.getElementById("img").src;
+        var x = document.querySelector("img").files[0];
         var a = document.getElementById("id_booking").innerHTML;
         console.log(x);
         console.log(a);
