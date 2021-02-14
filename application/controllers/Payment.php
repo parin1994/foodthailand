@@ -16,11 +16,8 @@ class Payment extends CI_Controller
     {
         $this->load->helper('url');
         $userid = $this->input->post('userid');
-        //$userid = 'U37ce1b2edf6c2556eeed082151a34cfe';
         $result = $this->booking_model->read_userid($userid);
         $result['read'] = $this->booking_model->read_order($userid);
-        // print_r($userid);
-        // exit();
         $this->load->view('payment', $result);
     }
     public function request()
@@ -33,13 +30,8 @@ class Payment extends CI_Controller
     }
     public function payment_booking()
     {
-        $a = $this->input->post('form_data');
         $id_booking = $this->input->post('id_booking');
         $img = $this->input->post('img');
-        print_r('lllll');
-        print_r($a);
-        print_r($img);
-        exit;
         $receipt = '';
         if (isset($_FILES['img']['name'])) {
             $config['upload_path'] = './assets/content';

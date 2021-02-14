@@ -86,7 +86,10 @@
                 <h5>ช่องทางการชำระเงิน</h5>
                 <input type="hidden" id="userid" name="userid" value="">
                 <br>
-<div style="overflow-x:auto;">
+                    
+                <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
+
+                    <div style="overflow-x:auto;">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -98,8 +101,6 @@
                             </tbody>
                         </table>
                     </div>
-                <!-- <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data"> -->
-                    
 
                     <div class="container">
                         <span class="col-12 text-center">
@@ -108,13 +109,14 @@
                             <input type="file" name="img" id="img">
                         </span>
                     </div>
+
                     <br>
                     <div class="container-contact100-form-btn">
-                        <button onclick="myFunction()" class="contact100-form-btn">
+                        <button class="contact100-form-btn">
                             ยืนยัน
                         </button>
                     </div>
-                <!-- </form> -->
+                </form>
         </div>
     </div>
 
@@ -156,20 +158,28 @@
     </script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="3d44b465189b22b734a3929d-|49" defer=""></script>
 </body>
-<!-- <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-<script src="liff-starter.js"></script> -->
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script src="liff-starter.js"></script>
 <script>
     window.onload = function(e) {
-        $.ajax({
+        liff.init(function(data) {
+            runApp();
+        });
+    };
+
+    function runApp() {
+        liff.getProfile().then(profile => {
+            let userid = document.getElementById("userid").value = profile.userId;
+            console.log(userid);
+            $.ajax({
                 url: "<?php echo site_url('payment/request'); ?>",
                 method: "POST",
                 data: {
-                    userid: 'U37ce1b2edf6c2556eeed082151a34cfe'
+                    userid: userid
                 },
                 async: true,
                 dataType: 'json',
                 success: function(data) {
-                    console.log(data);
                     var html = '';
                     var i;
                     data.forEach(v => {
@@ -181,77 +191,20 @@
 
 
             });
-        // liff.init(function(data) {
-        //     runApp();
-        // });
-    };
-
-    function myFunction() {
-        var x = document.querySelector("#img").files[0];
-        var a = document.getElementById("id_booking").innerHTML;
-        console.log(x);
-        console.log(a);
-        var file_data = $("#img").prop("files")[0];
-        var form_data = new FormData();
-        form_data.append("img", file_data);
-        form_data.append("id_booking", a);   
-        console.log(form_data);
-   
-        $.ajax({
-                url: "<?php echo site_url('payment/payment_booking'); ?>",
-                method: "POST",
-                data: {
-                    form_data
-                },
-                processData: false,
-                contentType: false,
-                success: function(data) {
-                    console.log(data);
-                }
 
 
-            });
-}
+        }).catch(err => console.log('ERROR MESSEGE:' + err));
+    }
 
-    // function runApp() {
-    //     liff.getProfile().then(profile => {
-    //         let userid = document.getElementById("userid").value = profile.userId;
-    //         console.log(userid);
-    //         $.ajax({
-    //             url: "<?php echo site_url('payment/request'); ?>",
-    //             method: "POST",
-    //             data: {
-    //                 userid: userid
-    //             },
-    //             async: true,
-    //             dataType: 'json',
-    //             success: function(data) {
-    //                 console.log(data);
-    //                 var html = '';
-    //                 var i;
-    //                 data.forEach(v => {
-    //                     html += '<tr><td style="width:10%;text-align:center" id="id_booking">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
-    //                 })
-    //                 $('#table').html(html);
-
-    //             }
-
-
-    //         });
-
-
-    //     }).catch(err => console.log('ERROR MESSEGE:' + err));
-    // }
-
-    // liff.init({
-    //     liffId: "1655534162-PlY90bgn"
-    // }, () => {
-    //     if (liff.isLoggedIn()) {
-    //         runApp()
-    //     } else {
-    //         liff.login();
-    //     }
-    // }, err => console.error(err.code, error.message));
+    liff.init({
+        liffId: "1655534162-PlY90bgn"
+    }, () => {
+        if (liff.isLoggedIn()) {
+            runApp()
+        } else {
+            liff.login();
+        }
+    }, err => console.error(err.code, error.message));
 </script>
 
 </html>
