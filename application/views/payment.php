@@ -187,6 +187,8 @@
     };
 
     function myFunction() {
+        var x = document.getElementById("img");
+        console.log(x);
         var test = $('id_booking').val();
         var img = $('img').val();
         console.log(test);
