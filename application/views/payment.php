@@ -194,7 +194,9 @@
         var file_data = $("#img").prop("files")[0];
         var form_data = new FormData();
         form_data.append("img", file_data);
-        form_data.append("id_booking", a);           
+        form_data.append("id_booking", a);   
+        console.log(form_data);
+   
         $.ajax({
                 url: "<?php echo site_url('payment/payment_booking'); ?>",
                 method: "POST",
