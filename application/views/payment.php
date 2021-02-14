@@ -188,6 +188,7 @@
 
     function myFunction() {
         var x = document.querySelector("#img").files[0];
+        console.log(x.files[0].name);
         var a = document.getElementById("id_booking").innerHTML;
         console.log(x);
         console.log(a);
