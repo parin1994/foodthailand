@@ -62,6 +62,7 @@ class booking_model extends CI_Model
         $data = array(
             'id_booking' => $savedata['id_booking'],
             'receipt' => $savedata['receipt'],
+            'status' =>  'สำเร็จ'
 
         );
         $this->db->where('id_booking', $savedata['id_booking']);
