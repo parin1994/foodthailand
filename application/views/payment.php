@@ -98,7 +98,7 @@
                             </tbody>
                         </table>
                     </div>
-                <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
+                <!-- <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data"> -->
                     
 
                     <div class="container">
@@ -110,11 +110,11 @@
                     </div>
                     <br>
                     <div class="container-contact100-form-btn">
-                        <button class="contact100-form-btn">
+                        <button onclick="myFunction()" class="contact100-form-btn">
                             ยืนยัน
                         </button>
                     </div>
-                </form>
+                <!-- </form> -->
         </div>
     </div>
 
@@ -207,31 +207,6 @@
 
             });
 }
-
-    function ranApp(){
-        $.ajax({
-                url: "<?php echo site_url('payment/request'); ?>",
-                method: "POST",
-                data: {
-                    userid: 'U37ce1b2edf6c2556eeed082151a34cfe'
-                },
-                async: true,
-                dataType: 'json',
-                success: function(data) {
-                    console.log(data);
-                    var html = '';
-                    var i;
-                    data.forEach(v => {
-                        html += '<tr><td style="width:10%;text-align:center" id="id_booking">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
-                    })
-                    $('#table').html(html);
-
-                }
-
-
-            });
-    }
-    
 
     // function runApp() {
     //     liff.getProfile().then(profile => {
