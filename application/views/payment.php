@@ -201,8 +201,8 @@
                 data: {
                     form_data
                 },
-                async: true,
-                dataType: 'json',
+                processData: false,
+                contentType: false,
                 success: function(data) {
                     console.log(data);
                 }
