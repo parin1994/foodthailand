@@ -87,7 +87,7 @@
                 <input type="hidden" id="userid" name="userid" value="">
                 <br>
                 <form role="form" action="<?php echo base_url('payment/payment_booking') ?>" method="post"  enctype="multipart/form-data">
-                    <input type="text" id="name"/>        
+                    <input type="file" name="img" id="img">
                     <button class="btn btn-primary" type="submit" name="btnsave" id="btnSave ">บันทึก</button>
                 </form>
                 <!-- <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
