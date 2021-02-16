@@ -85,9 +85,29 @@
             <span class="col-12 text-center">
                 <h5>ช่องทางการชำระเงิน</h5>
                 <input type="hidden" id="userid" name="userid" value="">
+                <div style="overflow-x:auto;">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width:10%;text-align:center">id</th>
+                                    <th style="width:20%;text-align:center">total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table">
+                            </tbody>
+                        </table>
+                    </div>
+
                 <br>
                 <form role="form" action="<?php echo base_url('payment/payment_booking') ?>" method="post"  enctype="multipart/form-data">
-                    <input type="file" name="img" id="img">
+                    <input type="text" id="id_booking" name="id_booking" value=""/>
+                    <div class="container">
+                        <span class="col-12 text-center">
+                            <h5>อัพโหลดใบเสร็จการชำระเงิน</h5>
+                            <br>
+                            <input type="file" name="img" id="img">
+                        </span>
+                    </div>
                     <button class="btn btn-primary" type="submit" name="btnsave" id="btnSave ">บันทึก</button>
                 </form>
                 <!-- <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
@@ -176,10 +196,13 @@
                 success: function(data) {
                     var html = '';
                     var i;
+                    var a;
                     data.forEach(v => {
-                        html += '<tr><td style="width:10%;text-align:center" id="id_booking">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
+                        html += '<tr><td style="width:10%;text-align:center">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
+                        a += '<input type="text" id="id_booking" name="id_booking" value="+ v.id_booking +"/>';
                     })
                     $('#table').html(html);
+                    $('#id_booking').html(html);
 
                 }
 
