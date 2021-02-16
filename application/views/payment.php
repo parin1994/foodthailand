@@ -86,10 +86,13 @@
                 <h5>ช่องทางการชำระเงิน</h5>
                 <input type="hidden" id="userid" name="userid" value="">
                 <br>
-                    
-                <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
+                <form role="form" action="<?php echo base_url('payment/payment_booking') ?>" method="post"  enctype="multipart/form-data">
+                    <input type="text" id="name"/>        
+                    <button class="btn btn-primary" type="submit" name="btnsave" id="btnSave ">บันทึก</button>
+                </form>
+                <!-- <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
                     <input type="text" id="name"/>
-                    <!-- <div style="overflow-x:auto;">
+                    <div style="overflow-x:auto;">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -110,13 +113,13 @@
                         </span>
                     </div>
 
-                    <br> -->
+                    <br>
                     <div class="container-contact100-form-btn">
                         <button class="contact100-form-btn">
                             ยืนยัน
                         </button>
                     </div>
-                </form>
+                </form> -->
         </div>
     </div>
 
