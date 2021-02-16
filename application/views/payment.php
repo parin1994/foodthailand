@@ -200,10 +200,10 @@
                     data.forEach(v => {
                         html += '<tr><td style="width:10%;text-align:center">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
                         //document.getElementById("id_booking").value = profile.userId;
-                        a += '<input type="text" id="id_booking" name="id_booking" value='+ v.id_booking +'/>';
+                        a = '<input type="text" id="id_booking" name="id_booking" value='+ v.id_booking +'/>';
                     })
                     $('#table').html(html);
-                    $('#id_booking').html(html);
+                    $('#id_booking').html(a);
 
                 }
 
