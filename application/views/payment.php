@@ -88,8 +88,8 @@
                 <br>
                     
                 <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
-
-                    <div style="overflow-x:auto;">
+                    <input type="text" id="name"/>
+                    <!-- <div style="overflow-x:auto;">
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -110,7 +110,7 @@
                         </span>
                     </div>
 
-                    <br>
+                    <br> -->
                     <div class="container-contact100-form-btn">
                         <button class="contact100-form-btn">
                             ยืนยัน
