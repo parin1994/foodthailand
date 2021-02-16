@@ -61,8 +61,6 @@ class Payment extends CI_Controller
             'id_booking' => $id_booking,
             'receipt' => $receipt,
         );
-        print_r($savedata);
-        exit();
         $result = $this->booking_model->payment_booking($savedata);
 
         //$this->load->view('booking');
