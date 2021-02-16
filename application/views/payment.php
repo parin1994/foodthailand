@@ -100,7 +100,7 @@
 
                 <br>
                 <form role="form" action="<?php echo base_url('payment/payment_booking') ?>" method="post"  enctype="multipart/form-data">
-                    <input type="text" id="id_booking" name="id_booking" value=""/>
+                    <input type="hidden" id="id_booking" name="id_booking" value=""/>
                     <div class="container">
                         <span class="col-12 text-center">
                             <h5>อัพโหลดใบเสร็จการชำระเงิน</h5>
