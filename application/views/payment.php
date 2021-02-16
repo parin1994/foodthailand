@@ -110,36 +110,6 @@
                     </div>
                     <button class="btn btn-primary" type="submit" name="btnsave" id="btnSave ">บันทึก</button>
                 </form>
-                <!-- <form action="<?php echo base_url('payment/payment_booking') ?>" method="POST" enctype="multipart/form-data">
-                    <input type="text" id="name"/>
-                    <div style="overflow-x:auto;">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th style="width:10%;text-align:center">id</th>
-                                    <th style="width:20%;text-align:center">total</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table">
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="container">
-                        <span class="col-12 text-center">
-                            <h5>อัพโหลดใบเสร็จการชำระเงิน</h5>
-                            <br>
-                            <input type="file" name="img" id="img">
-                        </span>
-                    </div>
-
-                    <br>
-                    <div class="container-contact100-form-btn">
-                        <button class="contact100-form-btn">
-                            ยืนยัน
-                        </button>
-                    </div>
-                </form> -->
         </div>
     </div>
 
@@ -200,14 +170,9 @@
                     data.forEach(v => {
                         html += '<tr><td style="width:10%;text-align:center">' + v.id_booking + '</td><td style="width:50px;text-align:center">' + v.total + '</td><tr>';
                         document.getElementById("id_booking").value =  v.id_booking ;
-                        //a = '<input type="text" id="id_booking" name="id_booking" value='+ v.id_booking +'/>';
                     })
                     $('#table').html(html);
-                    //$('#id_booking').html(a);
-
                 }
-
-
             });
         // liff.init(function(data) {
         //     runApp();

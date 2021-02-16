@@ -32,13 +32,9 @@ class Payment extends CI_Controller
     {
 
         $id_booking = $this->input->post('id_booking');
-        //$img = $this->input->post('img');
-        
         if (isset($_FILES['img']['name'])) {
             $receipt =  $_FILES['img']['name'];
-            print_r($receipt);
         }
-        exit();
         // if (isset($_FILES['img']['name'])) {
         //     $config['upload_path'] = './assets/content';
         //     $config['allowed_types'] = 'gif|jpg|png';
@@ -65,6 +61,8 @@ class Payment extends CI_Controller
             'id_booking' => $id_booking,
             'receipt' => $receipt,
         );
+        print_r($savedata);
+        exit();
         $result = $this->booking_model->payment_booking($savedata);
 
         //$this->load->view('booking');
