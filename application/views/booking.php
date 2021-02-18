@@ -31,7 +31,7 @@
                 <input type="hidden" id="userid" name="userid" value="">
                 <?php foreach ($product as $row) { ?>
                     <div class="col-md-4" style="padding:16px; background-color:#f1f1f1; border:1px solid #ccc; margin-bottom:16px; height:400px" align="center">
-                        <img src="<?php echo base_url($row->img) ?>" class="img-thumbnail" style="height: 100px; width: 100px;"><br />
+                        <!-- <img src="<?php echo base_url($row->img) ?>" class="img-thumbnail" style="height: 100px; width: 100px;"><br /> -->
                         <h4><?php echo $row->name_food ?></h4>
                         <h3 class="text-danger"><?php echo $row->price ?></h3>
                         <input type="text" name="quantity" class="form-control quantity" id=<?php echo $row->id_food ?>><br />
